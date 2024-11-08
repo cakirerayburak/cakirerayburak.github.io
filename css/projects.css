@@ -127,6 +127,11 @@ body{
     .project-grid {
         grid-template-columns: 1fr; 
     }
+
+    body
+    {
+        overflow: visible !important;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

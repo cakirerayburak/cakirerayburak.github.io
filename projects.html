@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projelerim</title>
+    <link rel="icon" href="assets/ico/homepage.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            AI2X <span id="current-time"></span>
+        </div>
+        <div class="nav-toggle">☰</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Anasayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="projects.html">Projelerim</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+        </ul>
+    </nav>
+    <section class="projects-section" id="projelerim">
+        <h2>Projelerim <hr></h2>
+        <div class="filter-buttons">
+            <button onclick="filterProjects('all')">Tümü</button>
+            <button onclick="filterProjects('latest')">En Son Projeler</button>
+            <button onclick="filterProjects('mostLiked')">En Beğenilen Projeler</button>
+        </div>
+    
+        <div class="project-grid">
+            <div class="project-img" data-category="mostLiked">
+                <img src="assets/img/projects/app-1.jpg" alt="Project 1" onclick="l_open('assets/img/projects/app-1.jpg', 'Bu popüler uygulama projesinin ilk görüntüsü.')">
+            </div>
+            
+            <div class="project-img" data-category="mostLiked">
+                <img src="assets/img/projects/app-3.jpg" alt="Project 2" onclick="l_open('assets/img/projects/app-3.jpg', 'En çok beğenilen uygulama projesinin bir başka görüntüsü.')">
+            </div>
+            
+            <div class="project-img" data-category="latest">
+                <img src="assets/img/projects/books-2.jpg" alt="Project 3" onclick="l_open('assets/img/projects/books-2.jpg', 'Son yayımlanan kitap tasarım projesinin görseli.')">
+            </div>
+            
+            <div class="project-img" data-category="latest">
+                <img src="assets/img/projects/branding-2.jpg" alt="Project 4" onclick="l_open('assets/img/projects/branding-2.jpg', 'En yeni marka tasarımı projesi.')">
+            </div>
+            
+            <div class="project-img" data-category="mostLiked">
+                <img src="assets/img/projects/product-2.jpg" alt="Project 5" onclick="l_open('assets/img/projects/product-2.jpg', 'Popüler ürün tasarımı projesinin ikinci görseli.')">
+            </div>
+            
+            <div class="project-img" data-category="latest">
+                <img src="assets/img/projects/product-3.jpg" alt="Project 6" onclick="l_open('assets/img/projects/product-3.jpg', 'En yeni ürün tasarımı projesi.')">
+            </div>
+        </div>
+        
+    </section>
+    <div class="lightbox" id="lightbox" onclick="l_close()">
+        <div class="lightbox-info" onclick="event.stopPropagation()">
+            <span class="close" onclick="l_close()">✕</span>
+            <img src="" alt="img" id="lightbox-img">
+            <p id="lightbox-desc"></p>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>

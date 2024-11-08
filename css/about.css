@@ -1,0 +1,113 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.about-section {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    min-height: 100vh;
+    background-image: url('../assets/img/about/aboutbackground.jpg'); /* Arka plan resmi ekleme */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+
+.about-container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(48, 47, 47, 0.95); /* Sondaki seffaflik oranini ayarliyor*/
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    border: 3px solid #ddd;
+}
+
+.about-container h3 {
+    font-size: 1.8em;
+    color: #a1a1a1;
+    margin-bottom: 10px;
+}
+
+.about-container hr {
+    border: 0;
+    height: 2px;
+    width: 50px;
+    background-color: #ffdd57;
+    margin: 10px auto;
+}
+
+.description-container {
+    max-height: 94px; 
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    color: #ddd;
+}
+
+.description-container.expanded {
+    max-height: 1000px; 
+}
+
+#toggle-description {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    background-color: #333;
+    color: #ffdd57;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#toggle-description:hover {
+    background-color: #ffdd57;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding-top: 30px;
+    }
+    .about-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+    .about-container h3 {
+        font-size: 1.5em;
+    }
+    .description-container {
+        max-height: 150px;
+    }
+    #toggle-description {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}

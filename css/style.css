@@ -129,6 +129,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    .body{
+        overflow: hidden;
+    }
     .nav-links {
         flex-direction: column;
         gap: 35px;

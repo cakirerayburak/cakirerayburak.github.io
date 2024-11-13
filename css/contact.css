@@ -7,7 +7,7 @@ body {
     height: 100vh; /* Tam ekran yapma */
     display: flex; /* merkezi konum için*/
     justify-content: center;
-    align-items: center;
+    align-items: center; /* containera ait itemleri topluca ortalamaya yarıyor.*/ 
 }
 
 .contact-section {
@@ -44,46 +44,97 @@ body {
 
 .contact-section form input,
 .contact-section form textarea {
-    width: 100%;
-    padding: 10px 100px 10px 0px;
+    width: 100%; /*text area boyutu */
+    padding: 10px 100px 10px 5px; /* Yaılzcak yazının başlangıç konumu */
     margin-top: 8px;
     border: 1px solid #ffdd57;
     border-radius: 4px;
-    font-size: 1em;
+    font-size: 1em; 
     background-color: #333;
     transition: border-color 0.3s ease;
+    color: white;
 }
 
 
-textarea
+textarea /* Mesaj kısmında barın bug durumu icin */
 {
  max-width: 100%;
  resize: vertical;
  min-height: 100px;
  max-height: 150px;
-
 }
 
 .contact-section form button {
     background-color: #ffdd57;
     color: #333;
     cursor: pointer;
-    border: none;
+    border: none; /* cizgi seklinde olan kenarliklari kapatmak icin*/ 
     padding: 12px; /* butonun sag*/
     width: 100%; /* butonun sag ile ust genislik*/
     border-radius: 4px;
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: bold;
     transition: background-color 0.3s ease;
     margin-top: 20px;
 }
 
 .contact-section form button:hover {
+    border: none;
     background-color: #333;
     color: #ffdd57;
 }
 
+#error-message-name
+{
+    margin-bottom: 150px;
+    color: rgb(255, 255, 255);
+    font-size: 1.0em;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.115);
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px;
+    z-index: 20;
+    position: fixed;
+}
+#error-message-email
+{
+    margin-top: 13px;
+    color: rgb(255, 255, 255);
+    font-size: 1.0em;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.115);
+    text-align: center;
+    border-radius: 15px;
+    padding: 8px;
+    z-index: 20;
+    position: fixed;
+}
+#error-message-message
+{
+    margin-top: 15%;
+    color: rgb(255, 255, 255);
+    font-size: 1.0em;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.115);
+    text-align: center;
+    border-radius: 5px;
+    padding: 9px;
+    z-index: 20;
+    position: fixed;
+}
 @media (max-width: 768px) {
+
+    #error-message-name
+    {
+        margin-bottom: 35%;
+    }
+
+    #error-message-message
+    {
+        margin-top: 50%;
+    }
+
     .contact-section {
         padding: 30px 15px;
         max-width: 90%;

@@ -1,5 +1,3 @@
-/* Projeler Bölümü */
-
 body{
     overflow: hidden; /* tam ekran yapma kaydırma çubuğunu gizleme*/
 }
@@ -43,7 +41,7 @@ body{
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr); /* proje resimlerini tek satıra yerlestirmek icin */
     gap: 20px;
     max-width: 1200px;
     margin: auto;

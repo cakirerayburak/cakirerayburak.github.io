@@ -1,4 +1,4 @@
-// Saat güncelleyici fonksiyon
+/* Saati guncellemek icin*/ 
 function updateClock() {
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
@@ -7,9 +7,9 @@ function updateClock() {
     document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
 }
 
-// Saati her saniyede bir güncelle
+/* Saati her saniyede guncelle*/ 
 setInterval(updateClock, 1000);
-updateClock(); // Sayfa yüklendiğinde saati hemen göster
+updateClock(); 
 
 
 function toggleDescription() {
@@ -24,9 +24,6 @@ function toggleDescription() {
         toggleButton.textContent = "Daha Fazla Gör";
     }
 }
-
-
-
 
 const navToggle = document.querySelector('.nav-toggle');
 const navbar = document.querySelector('.navbar');

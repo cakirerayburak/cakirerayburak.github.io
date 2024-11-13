@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            AI2X <span id="current-time"></span>
+            <a href="index.html" id="logo-text">AI2X</a> <span id="current-time"></span>
         </div>
         <div class="nav-toggle">☰</div>
         <ul class="nav-links">
@@ -22,6 +21,10 @@
             <li><a href="contact.html">İletişim</a></li>
         </ul>
     </nav>
+
+    <div id="error-message-name"></div>
+    <div id="error-message-email"></div>
+    <div id="error-message-message"></div>
 
     <section id="iletisim" class="contact-section">
         <h2>İletişim</h2>
@@ -35,9 +38,10 @@
             <label for="message">Mesaj:</label>
             <textarea id="message" name="message" required></textarea>
             
-            <button type="submit">Gönder</button>
+            <button type="submit" onclick="sendForm(event)">Gönder</button>
         </form>
     </section>
     <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ function sendForm(event)
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; /*email dogrulama yapması icin*/ 
 
     if (!name) {
-        document.getElementById("error-message-name").textContent = "Please enter your name.";
+        document.getElementById("error-message-name").textContent = "Lütfen isim Giriniz.";
         document.getElementById("error-message-name").style.display = "block";
 
         setTimeout(() => {
@@ -20,7 +20,7 @@ function sendForm(event)
         return;
     }
     if (!email) {
-        document.getElementById("error-message-email").textContent = "Please enter your e-mail.";
+        document.getElementById("error-message-email").textContent = "Lütfen e-mail adresi giriniz.";
         document.getElementById("error-message-email").style.display = "block";
 
         setTimeout(() => {
@@ -29,11 +29,16 @@ function sendForm(event)
         return;
     }
     if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
+        document.getElementById("error-message-email").textContent = "Geçersiz email adresi.";
+        document.getElementById("error-message-email").style.display = "block";
+
+        setTimeout(() => {
+            errorMessageEmail.style.display = "none";
+        }, 3000); /* 3 saniye sonra hata mesaji kaybolucak */
         return;
     }
     if (!message) {
-        document.getElementById("error-message-message").textContent = "Please enter your message.";
+        document.getElementById("error-message-message").textContent = "Lütfen mesaj giriniz.";
         document.getElementById("error-message-message").style.display = "block";
 
         setTimeout(() => {

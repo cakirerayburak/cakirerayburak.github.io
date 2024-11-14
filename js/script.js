@@ -32,6 +32,3 @@ navToggle.addEventListener('click', () => {
     navbar.classList.toggle('active');
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(type, delayBetweenWords);
-});

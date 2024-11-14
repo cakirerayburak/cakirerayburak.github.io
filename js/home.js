@@ -26,3 +26,8 @@ function erase() {
         setTimeout(type, typingSpeed);
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    type(); // Başlatmak için type fonksiyonunu çağırıyoruz
+});
+

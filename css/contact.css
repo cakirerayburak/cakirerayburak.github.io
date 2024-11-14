@@ -110,6 +110,7 @@ textarea /* Mesaj kısmında barın bug durumu icin */
     z-index: 20;
     position: fixed;
 }
+
 #error-message-message
 {
     margin-top: 15%;
@@ -123,6 +124,21 @@ textarea /* Mesaj kısmında barın bug durumu icin */
     z-index: 20;
     position: fixed;
 }
+
+#error-message-invalid-email
+{
+    margin-top: 13px;
+    color: rgb(255, 255, 255);
+    font-size: 1.0em;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.115);
+    text-align: center;
+    border-radius: 15px;
+    padding: 8px;
+    z-index: 20;
+    position: fixed;
+}
+
 @media (max-width: 768px) {
 
     #error-message-name

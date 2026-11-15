@@ -1,33 +1,113 @@
-    <!DOCTYPE html>
-    <html lang="tr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Eray Burak ÇAKIR</title>
-        <link rel="icon" href="assets/ico/homepage.ico" type="image/x-icon">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <header class="hero-section" id="anasayfa">
-            <nav class="navbar">
-                <div class="logo">
-                    <a href="index.html" id="logo-text">AI2X</a> <span id="current-time"></span>
-                </div>
-                <div class="nav-toggle">☰</div>  <!-- Mobil icin hamburger menu -->
-                <ul class="nav-links">
-                    <li><a href="index.html">Anasayfa</a></li>
-                    <li><a href="about.html">Hakkımda</a></li>
-                    <li><a href="projects.html">Projelerim</a></li>
-                    <li><a href="contact.html">İletişim</a></li>
-                </ul>
-            </nav>
-            <div class="hero-content">
-                <h1 id="intro-title">Merhaba! Ben Eray Burak ÇAKIR</h1>
-                <p class="subtitle" id="dynamic-text"></p>
-            </div>
-        </header>
-        
-        <script src="js/script.js"></script>
-        <script src="js/home.js"></script>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eray Burak Çakır - Software Engineer</title>
+  <meta name="description" content="Portfolio of Eray Burak Çakır, a computer engineer working across backend development, applied AI and autonomous systems. Turkcell, TEKNOFEST, TÜBİTAK and a registered patent.">
+  <link rel="canonical" href="https://cakirerayburak.github.io/">
+  <link rel="alternate" hreflang="en" href="https://cakirerayburak.github.io/">
+  <link rel="alternate" hreflang="tr" href="https://cakirerayburak.github.io/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://cakirerayburak.github.io/">
+
+  <meta name="theme-color" content="#F6F5F1">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Eray Burak Çakır">
+  <meta property="og:title" content="Eray Burak Çakır - Software Engineer">
+  <meta property="og:description" content="Computer engineer working across backend development, applied AI and autonomous systems.">
+  <meta property="og:url" content="https://cakirerayburak.github.io/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="assets/fonts/archivo-62-125w100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/archivo-62-125w100-900-latinext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Eray Burak Çakır",
+    "jobTitle": "Software Engineer",
+    "email": "mailto:cakirerayburak@gmail.com",
+    "url": "https://cakirerayburak.github.io/",
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Recep Tayyip Erdoğan University" },
+    "knowsAbout": ["Java", "Spring Boot", "REST API", "TypeScript", "Next.js", "NestJS", "PostgreSQL", "PyTorch", "Computer Vision", "YOLO", "TensorRT", "ROS 2", "Robotics"],
+    "sameAs": [
+      "https://www.linkedin.com/in/eray-burak-cakir/",
+      "https://github.com/cakirerayburak"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="wordmark" href="#top" aria-label="Eray Burak Çakır, home">
+        <span class="mark" aria-hidden="true"></span>
+        Eray Burak Çakır
+      </a>
+      <nav class="nav-desktop" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="lang" href="/tr/" hreflang="tr" lang="tr">TR</a></li>
+          <li><a class="btn btn-secondary nav-cta" href="assets/docs/eray-burak-cakir-cv.pdf" download>
+            CV
+            <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,112V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v24a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v72a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg>
+          </a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="icon icon-list" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg>
+        <svg class="icon icon-x" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="lang" href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="top" aria-label="Introduction">
+      <div class="container hero-inner">
+        <p class="hero-meta"><span class="mono">Eray Burak Çakır / Software engineer</span></p>
+        <h1 data-reveal>Backend systems and applied AI, proven in the real world.</h1>
+        <p class="hero-sub" data-reveal style="--ri: 1;">Computer engineer. Recent work: Spring Boot microservices at Turkcell, a live public platform, and national robotics finals.</p>
+        <div class="hero-actions" data-reveal style="--ri: 2;">
+          <a class="btn btn-primary" href="#work">
+            View selected work
+            <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+          </a>
+          <a class="btn btn-secondary" href="assets/docs/eray-burak-cakir-cv.pdf" download>
+            <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,112V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v24a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v72a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer band">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="mono">© <span id="year">2026</span> Eray Burak Çakır</p>
+        <p class="mono">Hand-built with HTML, CSS and JavaScript. No frameworks.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

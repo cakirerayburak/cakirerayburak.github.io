@@ -60,23 +60,23 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  /* Color */
-  --paper: #F6F5F1;
-  --paper-raised: #FDFCFA;
-  --ink: #1B1E22;
-  --ink-2: #43484F;
-  --ink-3: #5D636C;
-  --hairline: #DBD7CE;
-  --hairline-strong: #C7C2B7;
-  --accent: #BC3E12;        /* marks, fills, rules */
-  --accent-text: #A9370D;   /* accent as small text / links (AA on paper) */
-  --accent-bright: #E06B3A; /* accent on dark surfaces (AA on band-bg) */
+  /* Color - dark theme (default): layered slate graphite */
+  --paper: #101318;
+  --paper-raised: #151922;
+  --ink: #ECEDEF;
+  --ink-2: #A8B0BC;
+  --ink-3: #7E8694;
+  --hairline: #262C37;
+  --hairline-strong: #343B49;
+  --accent: #C9501F;        /* marks, fills, rules */
+  --accent-text: #EC744A;   /* accent as small text / links (AA on dark paper) */
+  --accent-bright: #EC744A; /* accent on band surfaces */
 
-  /* Dark band (contact + footer) - the single deliberate inverted block */
-  --band-bg: #15181B;
-  --band-ink: #EDEBE5;
-  --band-ink-2: #A9AFB7;
-  --band-hairline: #353B42;
+  /* Contact/footer band - elevated surface on dark theme */
+  --band-bg: #1A2029;
+  --band-ink: #E8EAEE;
+  --band-ink-2: #969DAB;
+  --band-hairline: #2C3340;
 
   /* Type */
   --font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
@@ -108,6 +108,47 @@
   /* Z-index scale: header 40, mobile menu 50 */
   --z-header: 40;
   --z-menu: 50;
+}
+
+html[data-theme="light"] {
+  /* Light theme: deeper bone paper, harmonized slate grays */
+  --paper: #F5F3EE;
+  --paper-raised: #FCFBF8;
+  --ink: #191C21;
+  --ink-2: #40454E;
+  --ink-3: #5C6470;
+  --hairline: #D5D0C4;
+  --hairline-strong: #B3AB9C;
+  --accent: #B23A10;
+  --accent-text: #9E3208;
+  --accent-bright: #EC744A;
+
+  /* Contact/footer band - the single deliberate inverted block on light */
+  --band-bg: #12151B;
+  --band-ink: #ECEDEF;
+  --band-ink-2: #9AA1AD;
+  --band-hairline: #303743;
+}
+
+/* Print always uses the light palette */
+@media print {
+  html[data-theme="dark"] {
+    --paper: #F5F3EE;
+    --paper-raised: #FCFBF8;
+    --ink: #191C21;
+    --ink-2: #40454E;
+    --ink-3: #5C6470;
+    --hairline: #D5D0C4;
+    --hairline-strong: #B3AB9C;
+    --accent: #B23A10;
+    --accent-text: #9E3208;
+    --accent-bright: #EC744A;
+    --band-bg: #12151B;
+    --band-ink: #ECEDEF;
+    --band-ink-2: #9AA1AD;
+    --band-hairline: #303743;
+  }
+  body { background: #fff; }
 }
 
 /* ---------- Reset ---------- */
@@ -332,6 +373,24 @@ p + p { margin-top: var(--s4); }
 }
 .lang:hover { color: var(--accent-text); border-color: var(--accent); }
 
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: none;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 2px;
+  color: var(--ink-3);
+  transition: color var(--t-fast) var(--ease-out),
+              border-color var(--t-fast) var(--ease-out);
+}
+.theme-btn:hover { color: var(--ink); border-color: var(--ink); }
+.theme-btn .icon { width: 1.05rem; height: 1.05rem; }
+html[data-theme="dark"] .theme-btn .icon-moon { display: none; }
+html[data-theme="light"] .theme-btn .icon-sun { display: none; }
+
 .menu-btn {
   display: inline-flex;
   align-items: center;
@@ -519,26 +578,182 @@ body.menu-open { overflow: hidden; }
   .skill-group:nth-child(n + 3) { border-top: 1px solid var(--hairline); }
 }
 
-/* ---------- Recognition & research ---------- */
+/* ---------- Patent showcase ---------- */
+.patent-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+  gap: var(--s7);
+  align-items: start;
+  border-top: 2px solid var(--accent);
+  padding-top: var(--s4);
+  margin-bottom: var(--s8);
+}
+.patent-meta { margin-bottom: var(--s4); }
+.patent-meta .nw { white-space: nowrap; }
+.patent-info h3 {
+  font-size: clamp(1.3rem, 1rem + 1.1vw, 1.7rem);
+  max-width: 34ch;
+  margin-bottom: var(--s4);
+}
+.patent-desc { color: var(--ink-2); font-size: var(--text-small); margin-bottom: var(--s5); }
+
+.patent-facts { border-top: 1px solid var(--hairline); }
+.patent-facts li {
+  padding-block: var(--s2);
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink-2);
+}
+.patent-facts li strong { color: var(--ink); font-weight: 500; }
+
+.patent-details { margin-top: var(--s5); }
+.patent-details summary {
+  cursor: pointer;
+  font-size: var(--text-small);
+  font-weight: 560;
+  color: var(--ink);
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 0.25rem;
+}
+.patent-details summary::-webkit-details-marker { display: none; }
+.patent-details summary::before {
+  content: "+";
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--accent-text);
+  width: 1rem;
+}
+.patent-details[open] summary::before { content: "-"; }
+.patent-details-body { padding-top: var(--s3); }
+.patent-details-body p { font-size: var(--text-small); color: var(--ink-2); }
+.patent-details-body p + p { margin-top: var(--s2); }
+.patent-details-body strong { color: var(--ink); font-weight: 560; }
+
+.patent-figure { margin: 0; }
+.patent-figure svg { width: 100%; height: auto; }
+.patent-figure figcaption {
+  margin-top: var(--s2);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.p-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  fill: var(--ink-2);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+}
+#p-angle-text { fill: var(--accent-text); }
+#p-coverage-wide path,
+#p-range-arc path { stroke: var(--ink-2); }
+#p-labels line { stroke: var(--ink-2); }
+
+/* mode layers (opacity transitions only) */
+#p-coverage-wide,
+#p-beam-narrow,
+#p-target { transition: opacity 0.45s var(--ease-out); }
+#p-beam-narrow { opacity: 0.15; }
+#p-target { opacity: 0; }
+.patent-visual[data-mode="directional"] #p-coverage-wide,
+.patent-visual[data-mode="ai"] #p-coverage-wide { opacity: 0.18; }
+.patent-visual[data-mode="directional"] #p-beam-narrow,
+.patent-visual[data-mode="ai"] #p-beam-narrow { opacity: 1; }
+.patent-visual[data-mode="ai"] #p-target { opacity: 1; }
+
+/* draggable target device (AI mode) */
+#patent-svg * { pointer-events: none; }
+#p-target { pointer-events: auto; }
+#p-target .p-hit { pointer-events: all; }
+#p-target {
+  cursor: default;
+  outline: none;
+}
+.patent-visual[data-mode="ai"] #p-target {
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+}
+.patent-visual.p-dragging #p-target { cursor: grabbing; }
+#p-target:focus-visible rect { stroke: var(--accent-text); stroke-width: 2; }
+@media (prefers-reduced-motion: no-preference) {
+  .p-target-inner.p-pulse {
+    animation: p-pulse 0.6s var(--ease-out) 2;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  @keyframes p-pulse { 50% { transform: scale(1.1); } }
+}
+
+.patent-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  margin-top: var(--s5);
+}
+.patent-btn {
+  font-size: var(--text-small);
+  font-weight: 560;
+  color: var(--ink-2);
+  border: 1px solid var(--hairline-strong);
+  border-radius: 2px;
+  padding: 0.55rem 0.9rem;
+  min-height: 2.75rem;
+  transition: color var(--t-fast) var(--ease-out),
+              border-color var(--t-fast) var(--ease-out),
+              background-color var(--t-fast) var(--ease-out);
+}
+.patent-btn:hover { color: var(--ink); border-color: var(--ink); }
+.patent-btn[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.patent-status {
+  margin-top: var(--s3);
+  font-size: 0.75rem;
+  line-height: 1.55;
+  max-width: 60ch;
+}
+
+/* draw-in on first view (progressive enhancement) */
+html.js .patent-showcase .p-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+html.js .patent-showcase.patent-ready .p-draw {
+  transition: stroke-dashoffset 0.9s var(--ease-out) var(--pd, 0ms);
+  stroke-dashoffset: 0;
+}
+html.js .patent-showcase .p-fade {
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out) var(--pd, 0ms);
+}
+html.js .patent-showcase.patent-ready .p-fade { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  html.js .patent-showcase .p-draw {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+  html.js .patent-showcase .p-fade { opacity: 1; transition: none; }
+  #p-coverage-wide, #p-beam-narrow, #p-target { transition: none; }
+}
+
+@media (max-width: 63.99em) {
+  .patent-showcase { grid-template-columns: minmax(0, 1fr); gap: var(--s6); margin-bottom: var(--s7); }
+}
+
+/* ---------- Recognition & research lists ---------- */
 .rec-grid {
   display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--s7);
   align-items: start;
 }
-.rec-patent {
-  border-top: 2px solid var(--accent);
-  padding-top: var(--s4);
-}
-.rec-patent .mono { margin-bottom: var(--s4); }
-.rec-patent h3 {
-  font-size: clamp(1.35rem, 1rem + 1.2vw, 1.75rem);
-  max-width: 30ch;
-  margin-bottom: var(--s3);
-}
-.rec-gloss { color: var(--ink-2); font-size: var(--text-small); max-width: 52ch; }
-
-.rec-side { display: grid; gap: var(--s6); }
 .rec-list li {
   display: grid;
   grid-template-columns: 3.5rem minmax(0, 1fr);
@@ -612,7 +827,7 @@ body.menu-open { overflow: hidden; }
   margin-top: var(--s6);
 }
 .band .xlink { color: var(--band-ink-2); font-size: 1rem; }
-.band .xlink:hover { color: var(--band-ink); }
+.band .xlink:hover { color: var(--accent-bright); }
 .band .xlink .icon { width: 1.15rem; height: 1.15rem; }
 @media (max-width: 63.99em) {
   .contact-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s6); }
@@ -622,10 +837,11 @@ body.menu-open { overflow: hidden; }
 .band {
   background: var(--band-bg);
   color: var(--band-ink);
+  border-top: 1px solid var(--band-hairline);
 }
 .band ::selection { background: var(--accent-bright); color: var(--band-bg); }
 .band .mono { color: var(--band-ink-2); }
-.band .tlink { color: var(--band-ink); text-decoration-color: var(--band-hairline); }
+.band .tlink { color: var(--band-ink); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
 .band .tlink:hover { color: var(--accent-bright); text-decoration-color: var(--accent-bright); }
 
 .site-footer {
@@ -638,8 +854,10 @@ body.menu-open { overflow: hidden; }
   padding-block: var(--s5);
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s3) var(--s6);
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 .footer-bottom .mono { color: var(--band-ink-2); }
 

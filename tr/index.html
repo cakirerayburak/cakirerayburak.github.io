@@ -10,8 +10,9 @@
   <link rel="alternate" hreflang="tr" href="https://cakirerayburak.github.io/tr/">
   <link rel="alternate" hreflang="x-default" href="https://cakirerayburak.github.io/">
 
-  <meta name="theme-color" content="#F6F5F1">
+  <meta name="theme-color" content="#101318">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: dark)" href="../assets/favicon-dark.svg">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Eray Burak Çakır">
@@ -33,6 +34,7 @@
 
   <link rel="preload" href="../assets/fonts/archivo-62-125w100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/archivo-62-125w100-900-latinext.woff2" as="font" type="font/woff2" crossorigin>
+  <script>(function(){try{var t=localStorage.getItem("siteTheme");document.documentElement.setAttribute("data-theme",t==="light"?"light":"dark")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
   <link rel="stylesheet" href="../assets/css/main.css">
   <script type="application/ld+json">
   {
@@ -69,6 +71,10 @@
           <li><a class="lang" href="../" hreflang="en" lang="en">EN</a></li>
         </ul>
       </nav>
+      <button type="button" class="theme-btn" aria-label="Açık temaya geç" data-label-dark="Koyu temaya geç" data-label-light="Açık temaya geç">
+        <svg class="icon icon-sun" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg>
+        <svg class="icon icon-moon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M240,96a8,8,0,0,1-8,8H216v16a8,8,0,0,1-16,0V104H184a8,8,0,0,1,0-16h16V72a8,8,0,0,1,16,0V88h16A8,8,0,0,1,240,96ZM144,56h8v8a8,8,0,0,0,16,0V56h8a8,8,0,0,0,0-16h-8V32a8,8,0,0,0-16,0v8h-8a8,8,0,0,0,0,16Zm72.77,97a8,8,0,0,1,1.43,8A96,96,0,1,1,95.07,37.8a8,8,0,0,1,10.6,9.06A88.07,88.07,0,0,0,209.14,150.33,8,8,0,0,1,216.77,153Zm-19.39,14.88c-1.79.09-3.59.14-5.38.14A104.11,104.11,0,0,1,88,64c0-1.79,0-3.59.14-5.38A80,80,0,1,0,197.38,167.86Z"/></svg>
+      </button>
       <button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menüyü aç" data-label-open="Menüyü aç" data-label-close="Menüyü kapat">
         <svg class="icon icon-list" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg>
         <svg class="icon icon-x" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>
@@ -252,32 +258,183 @@
         <div class="section-head">
           <h2 id="recognition-h">Başarılar ve araştırmalar</h2>
         </div>
-        <div class="rec-grid">
-          <div class="rec-patent" data-reveal>
-            <p class="mono">Tescilli patent / Ortak buluş sahibi / 2026 / Başvuru no. 2024/018955</p>
+        <div class="patent-showcase" data-reveal
+             data-status-wide="Geniş açılı 2,4 GHz anten kısa mesafede geniş kapsama sağlar; patch anten θ 90° konumunda dinlenmede."
+             data-status-directional="Servo, 5 GHz patch anteni tek yönde daha uzun menzilli, odaklı bağlantı için döndürür."
+             data-status-ai-1="Cihaz geri bildirimleri ve bağlantı ihtiyacı analiz ediliyor…"
+             data-status-ai-2="Servo kontrollü patch anten yeniden yönlendiriliyor…"
+             data-status-ai-3="Cihaza odaklı bağlantı kuruldu. Anteni yönlendirmek için cihazı sürükleyin." data-status-ai-drag="Cihazın konumu gerçek zamanlı izleniyor..." data-status-ai-drag-end="Anten yeni cihaz konumuna kilitlendi. Yeniden hedeflemek için sürükleyin.">
+          <div class="patent-info">
+            <p class="mono patent-meta">Tescilli patent / Ortak buluş sahibi / 2026 / Başvuru no. <span class="nw">2024/018955</span></p>
             <h3>Yapay Zekâ Kontrollü Dinamik Antenli Modem ile Sinyal ve Kapsama Optimizasyonu Sistemi ve Yöntemi</h3>
+            <p class="patent-desc">Yapay zekâ kontrollü dinamik antenli modem ile sinyal ve kapsama optimizasyon sistemi: anten yönlendirmesi, sinyal yoğunluğu ve kablosuz kapsama; çevresel koşullar ve cihaz ihtiyaçları analiz edilerek sürekli optimize edilir.</p>
+            <ul class="patent-facts mono">
+              <li>İkili anten sistemi: 2,4 GHz geniş açılı + 5 GHz patch</li>
+              <li>Servo kontrollü yönlendirme: 0-180°</li>
+              <li>Yapay zekâ tabanlı optimizasyon: kestirimsel model + kümeleme</li>
+              <li>Geri bildirimle yeniden ayarlama, enerji verimli çalışma</li>
+            </ul>
+            <details class="patent-details">
+              <summary>Teknik detaylar</summary>
+              <div class="patent-details-body">
+                <p><strong>Amaç.</strong> Sabit ve her yöne eşit yayılan antenler yerine, çevre ve cihaz ihtiyaçları değiştikçe sinyal gücü ve kapsama alanını verimli tutmak.</p>
+                <p><strong>İkili anten yaklaşımı.</strong> 2,4 GHz geniş açılı anten kısa mesafede geniş kapsama; 5 GHz patch anten daha uzun, odaklı bağlantılar için sinyali yoğunlaştırır.</p>
+                <p><strong>Servo kontrolü.</strong> Dar açılı patch anten, servo motor ile 0-180° aralığında mekanik olarak yönlendirilir.</p>
+                <p><strong>Yapay zekâ ve geri bildirim.</strong> Yapay zekâ işlemcisi cihaz geri bildirimlerini (sinyal seviyesi, kararlılık, veri hızı) ve kullanım örüntülerini analiz eder; antenleri yeniden yönlendirir, sinyal yoğunluğunu ayarlar.</p>
+                <p><strong>Enerji hedefi.</strong> Sinyal gücü gerçek kullanıma göre ölçeklenir; boşta daha düşük tüketim hedeflenir.</p>
+              </div>
+            </details>
           </div>
-          <div class="rec-side">
-            <div class="rec-block" data-reveal>
-              <p class="mono stack-label">Başarılar</p>
-              <ul class="rec-list">
-                <li><span class="mono">2025</span><span>TEKNOFEST 5G, Türkiye dördüncüsü</span></li>
-                <li><span class="mono">2024</span><span>TEKNOFEST Robotaksi, finalist</span></li>
-                <li><span class="mono">2024</span><span>TÜBİTAK 2209-A, proje yürütücüsü</span></li>
-              </ul>
+          <div class="patent-visual" data-mode="wide">
+            <figure class="patent-figure">
+              <svg id="patent-svg" viewBox="0 0 560 400" role="img" aria-labelledby="patent-svg-title" preserveAspectRatio="xMidYMid meet">
+                <title id="patent-svg-title">Modernize patent çizimi: sabit geniş açılı anten ve servo ile yönlendirilen, dar açılı sinyali dönüşü takip eden patch antene sahip modem</title>
+                <defs>
+                  <pattern id="p-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                    <path d="M24 0H0V24" fill="none" stroke="var(--hairline)" stroke-width="0.5" opacity="0.38"/>
+                  </pattern>
+                </defs>
+                <rect class="p-fade" x="16" y="16" width="528" height="352" fill="url(#p-grid)" style="--pd: 0ms" aria-hidden="true"/>
+
+                <!-- geniş kapsama: kesikli konsantrik yaylar -->
+                <g id="p-coverage-wide" class="p-fade" style="--pd: 500ms" aria-hidden="true">
+                  <path d="M150 234 A46 46 0 0 1 242 234" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="4 5"/>
+                  <path d="M126 234 A70 70 0 0 1 266 234" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="4 5" opacity="0.8"/>
+                  <path d="M102 234 A94 94 0 0 1 290 234" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="4 5" opacity="0.6"/>
+                  <path d="M196 176 L196 158" stroke="var(--ink-3)" stroke-width="1"/>
+                  <path d="M190 164 L196 156 L202 164" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+                </g>
+
+                <!-- hedef cihaz (YZ modu) -->
+                <g id="p-target" tabindex="-1" role="slider" aria-label="Hedef cihaz açısı" aria-valuemin="45" aria-valuemax="140" aria-valuenow="52">
+                  <rect class="p-hit" x="268" y="58" width="58" height="76" fill="none"/>
+                  <g class="p-target-inner">
+                    <rect x="281" y="82" width="22" height="36" rx="2.5" fill="none" stroke="var(--ink)" stroke-width="1.25"/>
+                    <line x1="286" y1="88" x2="298" y2="88" stroke="var(--ink-3)" stroke-width="1"/>
+                    <text class="p-label" x="306" y="78">cihaz</text>
+                  </g>
+                  <line id="p-target-leader" x1="303" y1="100" x2="340" y2="128" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 4"/>
+                </g>
+
+                <!-- modem gövdesi (8) ve ön yüz detayları -->
+                <g id="p-body" aria-hidden="true">
+                  <rect class="p-draw" x="140" y="252" width="280" height="84" rx="5" fill="none" stroke="var(--ink)" stroke-width="1.5" pathLength="1" style="--pd: 100ms"/>
+                  <rect class="p-draw" x="176" y="336" width="20" height="5" fill="none" stroke="var(--ink)" stroke-width="1" pathLength="1" style="--pd: 300ms"/>
+                  <rect class="p-draw" x="364" y="336" width="20" height="5" fill="none" stroke="var(--ink)" stroke-width="1" pathLength="1" style="--pd: 300ms"/>
+                  <g class="p-fade" style="--pd: 450ms" id="p-grilles">
+                    <line x1="166" y1="266" x2="166" y2="288" stroke="var(--ink-3)" stroke-width="1"/>
+                    <line x1="172" y1="266" x2="172" y2="288" stroke="var(--ink-3)" stroke-width="1"/>
+                    <line x1="178" y1="266" x2="178" y2="288" stroke="var(--ink-3)" stroke-width="1"/>
+                    <line x1="184" y1="266" x2="184" y2="288" stroke="var(--ink-3)" stroke-width="1"/>
+                    <line x1="190" y1="266" x2="190" y2="288" stroke="var(--ink-3)" stroke-width="1"/>
+                    <line x1="196" y1="266" x2="196" y2="288" stroke="var(--ink-3)" stroke-width="1"/>
+                  </g>
+                  <rect class="p-draw" x="268" y="266" width="32" height="7" fill="none" stroke="var(--ink-3)" stroke-width="1" pathLength="1" style="--pd: 500ms"/>
+                  <g class="p-fade" style="--pd: 550ms" id="p-wifi-mark">
+                    <path d="M384 276 a6 6 0 0 1 9 0" fill="none" stroke="var(--accent)" stroke-width="1.25"/>
+                    <path d="M381 272 a11 11 0 0 1 15 0" fill="none" stroke="var(--accent)" stroke-width="1.25"/>
+                    <circle cx="388.5" cy="280" r="1.4" fill="var(--accent)"/>
+                  </g>
+                  <g class="p-fade" style="--pd: 600ms" id="p-leds">
+                    <circle cx="170" cy="314" r="2.5" fill="var(--accent)"/>
+                    <circle cx="183" cy="314" r="2.5" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+                    <circle cx="196" cy="314" r="2.5" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+                    <circle cx="209" cy="314" r="2.5" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+                    <circle cx="222" cy="314" r="2.5" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+                  </g>
+                  <circle class="p-fade" style="--pd: 600ms" cx="150" cy="264" r="2" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+                  <circle class="p-fade" style="--pd: 600ms" cx="410" cy="264" r="2" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+                </g>
+
+                <!-- geniş açılı anten (1), sabit, 2,4 GHz -->
+                <g id="p-ant-wide" aria-hidden="true">
+                  <rect class="p-draw" x="188" y="242" width="16" height="10" fill="none" stroke="var(--ink)" stroke-width="1.25" pathLength="1" style="--pd: 400ms"/>
+                  <rect class="p-draw" x="186" y="176" width="20" height="66" rx="3" fill="none" stroke="var(--ink)" stroke-width="1.5" pathLength="1" style="--pd: 500ms"/>
+                  <line class="p-fade" style="--pd: 650ms" x1="196" y1="184" x2="196" y2="234" stroke="var(--ink-3)" stroke-width="1"/>
+                </g>
+
+                <!-- servo gövdesi (17), şaft (7), kablolar -->
+                <g id="p-servo" aria-hidden="true">
+                  <rect class="p-draw" x="404" y="226" width="30" height="26" rx="2" fill="none" stroke="var(--ink)" stroke-width="1.5" pathLength="1" style="--pd: 550ms"/>
+                  <line class="p-fade" style="--pd: 700ms" x1="404" y1="233" x2="434" y2="233" stroke="var(--ink-3)" stroke-width="0.75"/>
+                  <path class="p-fade" style="--pd: 750ms" d="M434 240 C444 240 442 250 448 252" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+                  <path class="p-fade" style="--pd: 750ms" d="M434 248 C446 248 446 254 452 252" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+                  <line class="p-fade" style="--pd: 700ms" x1="404" y1="239" x2="401" y2="239" stroke="var(--ink)" stroke-width="2"/>
+                </g>
+
+                <!-- dar açılı patch anten (1) + iç içe sinyal; (398,239) etrafında döner -->
+                <g id="p-ant-narrow" aria-hidden="true">
+                  <g id="p-beam-narrow">
+                    <path d="M398 232 L366 88 L430 88 Z" fill="var(--accent)" opacity="0.07"/>
+                    <line x1="398" y1="206" x2="398" y2="112" stroke="var(--accent)" stroke-width="1.25" opacity="0.85"/>
+                    <line x1="398" y1="212" x2="377" y2="122" stroke="var(--accent)" stroke-width="1" opacity="0.55"/>
+                    <line x1="398" y1="212" x2="419" y2="122" stroke="var(--accent)" stroke-width="1" opacity="0.55"/>
+                  </g>
+                  <rect class="p-draw" x="393" y="210" width="10" height="24" fill="none" stroke="var(--ink)" stroke-width="1.25" pathLength="1" style="--pd: 600ms"/>
+                  <rect class="p-draw" x="390" y="152" width="16" height="58" rx="3" fill="none" stroke="var(--ink)" stroke-width="1.5" pathLength="1" style="--pd: 650ms"/>
+                  <line class="p-fade" style="--pd: 750ms" x1="398" y1="160" x2="398" y2="202" stroke="var(--ink-3)" stroke-width="1"/>
+                  <circle cx="398" cy="239" r="3.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+                </g>
+
+                <!-- 0-180° servo referans yayı -->
+                <g id="p-range-arc" class="p-fade" style="--pd: 800ms" aria-hidden="true">
+                  <path d="M336 196 A70 70 0 0 1 460 196" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="2 4"/>
+                  <path d="M340 189 L336 196 L344 197" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+                  <path d="M456 189 L460 196 L452 197" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+                  <text class="p-label" x="486" y="222">0-180°</text>
+                  <text class="p-label" id="p-angle-text" x="486" y="238">θ = 90°</text>
+                </g>
+
+                <!-- referans numaraları ve lider çizgiler -->
+                <g id="p-labels" class="p-fade" style="--pd: 850ms" aria-hidden="true">
+                  <line x1="274" y1="156" x2="208" y2="182" stroke="var(--ink-3)" stroke-width="0.75"/>
+                  <line x1="286" y1="156" x2="388" y2="160" stroke="var(--ink-3)" stroke-width="0.75"/>
+                  <text class="p-label" x="272" y="150">1</text>
+                  <line x1="170" y1="344" x2="176" y2="320" stroke="var(--ink-3)" stroke-width="0.75"/>
+                  <text class="p-label" x="164" y="356">2</text>
+                  <line x1="144" y1="278" x2="160" y2="277" stroke="var(--ink-3)" stroke-width="0.75"/>
+                  <text class="p-label" x="132" y="281">5</text>
+                  <line x1="382" y1="222" x2="395" y2="236" stroke="var(--ink-3)" stroke-width="0.75"/>
+                  <text class="p-label" x="370" y="218">7</text>
+                  <line x1="438" y1="266" x2="430" y2="252" stroke="var(--ink-3)" stroke-width="0.75"/>
+                  <text class="p-label" x="440" y="278">17</text>
+                  <line x1="300" y1="366" x2="300" y2="342" stroke="var(--ink-3)" stroke-width="0.75"/>
+                  <text class="p-label" x="294" y="378">8</text>
+                  <text class="p-label" x="214" y="204">2.4 GHz</text>
+                  <text class="p-label" x="416" y="196">5 GHz patch</text>
+                </g>
+              </svg>
+              <figcaption class="mono">Patent çizimlerine (Şekil 1-4) dayalı temsili görselleştirme. Canlı ölçüm değildir.</figcaption>
+            </figure>
+            <div class="patent-controls" role="group" aria-label="Patent görselleştirme modları">
+              <button type="button" class="patent-btn" data-patent-mode="wide" aria-pressed="true">Geniş kapsama</button>
+              <button type="button" class="patent-btn" data-patent-mode="directional" aria-pressed="false">Odaklı sinyal</button>
+              <button type="button" class="patent-btn" data-patent-mode="ai" aria-pressed="false">Yapay zekâ optimizasyonu</button>
             </div>
-            <div class="rec-block" data-reveal>
-              <p class="mono stack-label">Araştırmalar</p>
-              <ul class="rec-list">
-                <li><span class="mono">2025</span><span>IDEF Defenders of Tomorrow: üniversite ekibiyle CNN/LSTM tabanlı İHA arıza tespiti ve Jetson uçuş telemetrisi analizi
-                  <a class="xlink" href="https://rteuai2x.idef.com.tr/" target="_blank" rel="noopener">
-                    Proje sayfası
-                    <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
-                  </a>
-                </span></li>
-                <li><span class="mono" aria-hidden="true"></span><span>Otonom nesne takibi: Jetson Orin üzerinde TensorRT ile gerçek zamanlı çalışan YOLOv8 ve Unity entegrasyonu</span></li>
-              </ul>
-            </div>
+            <p class="mono patent-status" data-patent-status aria-live="polite">Geniş açılı 2,4 GHz anten kısa mesafede geniş kapsama sağlar; patch anten θ 90° konumunda dinlenmede.</p>
+          </div>
+        </div>
+
+        <div class="rec-grid">
+          <div class="rec-block" data-reveal>
+            <p class="mono stack-label">Başarılar</p>
+            <ul class="rec-list">
+              <li><span class="mono">2025</span><span>TEKNOFEST 5G, Türkiye dördüncüsü</span></li>
+              <li><span class="mono">2024</span><span>TEKNOFEST Robotaksi, finalist</span></li>
+              <li><span class="mono">2024</span><span>TÜBİTAK 2209-A, proje yürütücüsü</span></li>
+            </ul>
+          </div>
+          <div class="rec-block" data-reveal>
+            <p class="mono stack-label">Araştırmalar</p>
+            <ul class="rec-list">
+              <li><span class="mono">2025</span><span>IDEF Defenders of Tomorrow: üniversite ekibiyle CNN/LSTM tabanlı İHA arıza tespiti ve Jetson uçuş telemetrisi analizi
+                <a class="xlink" href="https://rteuai2x.idef.com.tr/" target="_blank" rel="noopener">
+                  Proje sayfası
+                  <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+                </a>
+              </span></li>
+              <li><span class="mono" aria-hidden="true"></span><span>Otonom nesne takibi: Jetson Orin üzerinde TensorRT ile gerçek zamanlı çalışan YOLOv8 ve Unity entegrasyonu</span></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -352,7 +509,6 @@
       <div class="container">
         <div class="footer-bottom">
           <p class="mono">© <span id="year">2026</span> Eray Burak Çakır</p>
-          <p class="mono">HTML, CSS ve JavaScript ile elle geliştirildi; framework kullanılmadı.</p>
         </div>
       </div>
     </footer>

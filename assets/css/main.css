@@ -435,6 +435,49 @@ body.menu-open { overflow: hidden; }
   margin-top: var(--s7);
 }
 
+/* ---------- Projects (editorial case rows) ---------- */
+.project {
+  border-top: 1px solid var(--hairline);
+  padding-block: var(--s7);
+}
+.project:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.project-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s2) var(--s5);
+  margin-bottom: var(--s4);
+}
+.project-top h3 { max-width: 24ch; }
+
+.project-featured .project-top h3 {
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.125rem);
+}
+
+.project-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 17rem;
+  gap: var(--s4) var(--s7);
+  align-items: start;
+}
+.project-desc p { max-width: 62ch; }
+.project-desc .xlink { display: inline-flex; margin-top: var(--s4); }
+
+.stack-label {
+  text-transform: none;
+  margin-bottom: var(--s2);
+}
+.stack-list { max-width: 34ch; }
+
+@media (max-width: 47.99em) {
+  .project-body { grid-template-columns: minmax(0, 1fr); gap: var(--s4); }
+}
+
 /* ---------- Footer / contact band ---------- */
 .band {
   background: var(--band-bg);

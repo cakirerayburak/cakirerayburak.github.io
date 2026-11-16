@@ -648,6 +648,21 @@ body.menu-open { overflow: hidden; }
   stroke-linejoin: round;
 }
 #p-angle-text { fill: var(--accent-text); }
+
+/* mobile: keep patent annotations legible (figure scales below 1:1 under ~594px) */
+@media (max-width: 600px) {
+  .p-label { font-size: 13px; }
+  /* breathe between the stacked range/theta readouts at larger sizes */
+  #p-angle-text { transform: translateY(9px); }
+}
+@media (max-width: 480px) {
+  .p-label { font-size: 15px; }
+  #p-angle-text { transform: translateY(11px); }
+}
+@media (max-width: 360px) {
+  .p-label { font-size: 16.5px; }
+  #p-angle-text { transform: translateY(13px); }
+}
 #p-coverage-wide path,
 #p-range-arc path { stroke: var(--ink-2); }
 #p-labels line { stroke: var(--ink-2); }

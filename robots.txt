@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cakirerayburak.github.io/sitemap.xml
+Sitemap: https://erayburakcakir.com.tr/sitemap.xml

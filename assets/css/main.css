@@ -545,6 +545,72 @@ body.menu-open { overflow: hidden; }
   .rec-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s6); }
 }
 
+/* ---------- About ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: var(--s7);
+  align-items: start;
+}
+.about-prose .section-head { margin-bottom: var(--s5); }
+.about-prose p { color: var(--ink-2); }
+
+.fact { padding-block: var(--s4); }
+.fact + .fact { border-top: 1px solid var(--hairline); }
+.fact dt { margin-bottom: var(--s2); }
+.fact dd {
+  margin: 0;
+  font-size: var(--text-small);
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+@media (max-width: 63.99em) {
+  .about-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s6); }
+}
+
+/* ---------- Contact band ---------- */
+.contact {
+  padding-block: var(--section-pad) var(--s7);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+  gap: var(--s7);
+  align-items: start;
+}
+.contact-lead h2 { margin-bottom: var(--s4); }
+.contact-lead p { color: var(--band-ink-2); max-width: 44ch; }
+
+.contact-mail {
+  display: inline-block;
+  font-weight: 620;
+  font-stretch: 103%;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.25rem, 1rem + 1.4vw, 1.9rem);
+  color: var(--band-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--band-hairline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
+  transition: color var(--t-fast) var(--ease-out),
+              text-decoration-color var(--t-fast) var(--ease-out);
+}
+.contact-mail:hover { color: var(--accent-bright); text-decoration-color: var(--accent-bright); }
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3) var(--s6);
+  margin-top: var(--s6);
+}
+.band .xlink { color: var(--band-ink-2); font-size: 1rem; }
+.band .xlink:hover { color: var(--band-ink); }
+.band .xlink .icon { width: 1.15rem; height: 1.15rem; }
+@media (max-width: 63.99em) {
+  .contact-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s6); }
+}
+
 /* ---------- Footer / contact band ---------- */
 .band {
   background: var(--band-bg);

@@ -654,6 +654,30 @@ body.menu-open { overflow: hidden; }
 .patent-visual[data-mode="ai"] #p-beam-narrow { opacity: 1; }
 .patent-visual[data-mode="ai"] #p-target { opacity: 1; }
 
+/* draggable target device (AI mode) */
+#patent-svg * { pointer-events: none; }
+#p-target { pointer-events: auto; }
+#p-target .p-hit { pointer-events: all; }
+#p-target {
+  cursor: default;
+  outline: none;
+}
+.patent-visual[data-mode="ai"] #p-target {
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+}
+.patent-visual.p-dragging #p-target { cursor: grabbing; }
+#p-target:focus-visible rect { stroke: var(--accent-text); stroke-width: 2; }
+@media (prefers-reduced-motion: no-preference) {
+  .p-target-inner.p-pulse {
+    animation: p-pulse 0.6s var(--ease-out) 2;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  @keyframes p-pulse { 50% { transform: scale(1.1); } }
+}
+
 .patent-controls {
   display: flex;
   flex-wrap: wrap;

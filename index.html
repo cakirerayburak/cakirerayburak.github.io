@@ -263,7 +263,7 @@
              data-status-directional="The servo turns the 5 GHz patch antenna for a focused, longer-range link in one direction."
              data-status-ai-1="Analyzing device feedback and connection demand…"
              data-status-ai-2="Retargeting the servo-driven patch antenna…"
-             data-status-ai-3="Focused link established toward the device. Representative simulation, not a live measurement.">
+             data-status-ai-3="Focused link established toward the device. Drag the device to steer the antenna. Representative simulation, not a live measurement." data-status-ai-drag="Tracking the device in real time as it moves..." data-status-ai-drag-end="Antenna locked on the new device position. Drag again to retarget.">
           <div class="patent-info">
             <p class="mono patent-meta">Registered patent / Co-inventor / 2026 / Application no. 2024/018955</p>
             <h3 lang="tr">Yapay Zekâ Kontrollü Dinamik Antenli Modem ile Sinyal ve Kapsama Optimizasyonu Sistemi ve Yöntemi</h3>
@@ -306,11 +306,14 @@
                 </g>
 
                 <!-- target device (AI mode) -->
-                <g id="p-target" aria-hidden="true">
-                  <rect x="281" y="82" width="22" height="36" rx="2.5" fill="none" stroke="var(--ink)" stroke-width="1.25"/>
-                  <line x1="286" y1="88" x2="298" y2="88" stroke="var(--ink-3)" stroke-width="1"/>
-                  <path d="M303 100 L340 128" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 4"/>
-                  <text class="p-label" x="306" y="78">device</text>
+                <g id="p-target" tabindex="-1" role="slider" aria-label="Target device angle" aria-valuemin="45" aria-valuemax="140" aria-valuenow="52">
+                  <rect class="p-hit" x="268" y="58" width="58" height="76" fill="none"/>
+                  <g class="p-target-inner">
+                    <rect x="281" y="82" width="22" height="36" rx="2.5" fill="none" stroke="var(--ink)" stroke-width="1.25"/>
+                    <line x1="286" y1="88" x2="298" y2="88" stroke="var(--ink-3)" stroke-width="1"/>
+                    <text class="p-label" x="306" y="78">device</text>
+                  </g>
+                  <line id="p-target-leader" x1="303" y1="100" x2="340" y2="128" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 4"/>
                 </g>
 
                 <!-- modem body (8) with front details -->

@@ -263,7 +263,7 @@
              data-status-directional="Servo, 5 GHz patch anteni tek yönde daha uzun menzilli, odaklı bağlantı için döndürür."
              data-status-ai-1="Cihaz geri bildirimleri ve bağlantı ihtiyacı analiz ediliyor…"
              data-status-ai-2="Servo kontrollü patch anten yeniden yönlendiriliyor…"
-             data-status-ai-3="Cihaza odaklı bağlantı kuruldu. Temsili simülasyondur, canlı ölçüm değildir.">
+             data-status-ai-3="Cihaza odaklı bağlantı kuruldu. Anteni yönlendirmek için cihazı sürükleyin. Temsili simülasyondur, canlı ölçüm değildir." data-status-ai-drag="Cihazın konumu gerçek zamanlı izleniyor..." data-status-ai-drag-end="Anten yeni cihaz konumuna kilitlendi. Yeniden hedeflemek için sürükleyin.">
           <div class="patent-info">
             <p class="mono patent-meta">Tescilli patent / Ortak buluş sahibi / 2026 / Başvuru no. 2024/018955</p>
             <h3>Yapay Zekâ Kontrollü Dinamik Antenli Modem ile Sinyal ve Kapsama Optimizasyonu Sistemi ve Yöntemi</h3>
@@ -306,11 +306,14 @@
                 </g>
 
                 <!-- hedef cihaz (YZ modu) -->
-                <g id="p-target" aria-hidden="true">
-                  <rect x="281" y="82" width="22" height="36" rx="2.5" fill="none" stroke="var(--ink)" stroke-width="1.25"/>
-                  <line x1="286" y1="88" x2="298" y2="88" stroke="var(--ink-3)" stroke-width="1"/>
-                  <path d="M303 100 L340 128" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 4"/>
-                  <text class="p-label" x="306" y="78">cihaz</text>
+                <g id="p-target" tabindex="-1" role="slider" aria-label="Hedef cihaz açısı" aria-valuemin="45" aria-valuemax="140" aria-valuenow="52">
+                  <rect class="p-hit" x="268" y="58" width="58" height="76" fill="none"/>
+                  <g class="p-target-inner">
+                    <rect x="281" y="82" width="22" height="36" rx="2.5" fill="none" stroke="var(--ink)" stroke-width="1.25"/>
+                    <line x1="286" y1="88" x2="298" y2="88" stroke="var(--ink-3)" stroke-width="1"/>
+                    <text class="p-label" x="306" y="78">cihaz</text>
+                  </g>
+                  <line id="p-target-leader" x1="303" y1="100" x2="340" y2="128" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 4"/>
                 </g>
 
                 <!-- modem gövdesi (8) ve ön yüz detayları -->

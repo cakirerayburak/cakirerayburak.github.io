@@ -153,6 +153,15 @@
     var pRaf = 0;
     var pTimers = [];
     var pAngleCur = 0;
+    var pSvg = document.getElementById("patent-svg");
+    var pTarget = document.getElementById("p-target");
+    var pTargetInner = pTarget ? pTarget.querySelector(".p-target-inner") : null;
+    var pLeader = document.getElementById("p-target-leader");
+    var DRAG_R = 174;   /* device orbit radius around the servo pivot */
+    var D_MIN = -45;    /* display rotation clamp; physical 45-140 within 0-180 */
+    var D_MAX = 50;
+    var pDragging = false;
+    var pFollowRaf = 0;
 
     function pApply(d) {
       pAngleCur = d;
@@ -192,8 +201,61 @@
     function pClear() {
       pToken++;
       if (pRaf) cancelAnimationFrame(pRaf);
+      if (pFollowRaf) cancelAnimationFrame(pFollowRaf);
       pTimers.forEach(function (t) { clearTimeout(t); });
       pTimers = [];
+    }
+
+    function pPlaceTarget(d) {
+      if (!pTarget) return;
+      var rad = (d * Math.PI) / 180;
+      var cx = PIVOT.x + DRAG_R * Math.sin(rad);
+      var cy = PIVOT.y - DRAG_R * Math.cos(rad);
+      pTarget.setAttribute(
+        "transform",
+        "translate(" + (cx - 292).toFixed(1) + " " + (cy - 100).toFixed(1) + ")"
+      );
+      if (pLeader) {
+        var dx = PIVOT.x - cx;
+        var dy = PIVOT.y - cy;
+        var len = Math.sqrt(dx * dx + dy * dy);
+        var t = Math.max(0, (len - 30) / len);
+        pLeader.setAttribute("x1", cx.toFixed(1));
+        pLeader.setAttribute("y1", cy.toFixed(1));
+        pLeader.setAttribute("x2", (cx + dx * t).toFixed(1));
+        pLeader.setAttribute("y2", (cy + dy * t).toFixed(1));
+      }
+      pTarget.setAttribute("aria-valuenow", String(Math.round(90 + d)));
+    }
+
+    /* antenna chases the device with a short mechanical lag */
+    function pFollow(targetD) {
+      if (pFollowRaf) cancelAnimationFrame(pFollowRaf);
+      if (pReduce.matches) {
+        pApply(targetD);
+        return;
+      }
+      function step() {
+        var diff = targetD - pAngleCur;
+        if (Math.abs(diff) < 0.4) {
+          pApply(targetD);
+          pFollowRaf = 0;
+          return;
+        }
+        pApply(pAngleCur + diff * 0.22);
+        pFollowRaf = requestAnimationFrame(step);
+      }
+      pFollowRaf = requestAnimationFrame(step);
+    }
+
+    function pPointerAngle(e) {
+      if (!pSvg || !pSvg.getScreenCTM()) return 0;
+      var pt = pSvg.createSVGPoint();
+      pt.x = e.clientX;
+      pt.y = e.clientY;
+      var p = pt.matrixTransform(pSvg.getScreenCTM().inverse());
+      var a = (Math.atan2(p.x - PIVOT.x, PIVOT.y - p.y) * 180) / Math.PI;
+      return Math.max(D_MIN, Math.min(D_MAX, a));
     }
 
     function pSetMode(mode) {
@@ -205,6 +267,7 @@
           String(b.getAttribute("data-patent-mode") === mode)
         );
       });
+      if (pTarget) pTarget.setAttribute("tabindex", mode === "ai" ? "0" : "-1");
       if (mode === "wide") {
         pStatus.textContent = showcase.getAttribute("data-status-wide");
         pAnimateTo(0, 700);
@@ -212,7 +275,16 @@
         pStatus.textContent = showcase.getAttribute("data-status-directional");
         pAnimateTo(42, 900);
       } else {
-        pTimers = [
+        pPlaceTarget(-38);
+        if (pTargetInner) {
+          pTargetInner.classList.remove("p-pulse");
+          void pTargetInner.getBBox();
+          pTargetInner.classList.add("p-pulse");
+          pTimers.push(
+            setTimeout(function () { pTargetInner.classList.remove("p-pulse"); }, 1500)
+          );
+        }
+        pTimers = pTimers.concat([
           setTimeout(function () {
             pStatus.textContent = showcase.getAttribute("data-status-ai-1");
           }, 250),
@@ -223,7 +295,7 @@
           setTimeout(function () {
             pStatus.textContent = showcase.getAttribute("data-status-ai-3");
           }, 2600),
-        ];
+        ]);
       }
     }
 
@@ -234,7 +306,53 @@
         if (btn) pSetMode(btn.getAttribute("data-patent-mode"));
       });
 
+    if (pTarget) {
+      pTarget.addEventListener("pointerdown", function (e) {
+        if (pVisual.getAttribute("data-mode") !== "ai") return;
+        e.preventDefault();
+        pClear();
+        pDragging = true;
+        pVisual.classList.add("p-dragging");
+        try { pTarget.setPointerCapture(e.pointerId); } catch (err) {}
+        pStatus.textContent = showcase.getAttribute("data-status-ai-drag");
+        var a = pPointerAngle(e);
+        pPlaceTarget(a);
+        pFollow(a);
+      });
+      pTarget.addEventListener("pointermove", function (e) {
+        if (!pDragging) return;
+        var a = pPointerAngle(e);
+        pPlaceTarget(a);
+        pFollow(a);
+      });
+      function pEndDrag() {
+        if (!pDragging) return;
+        pDragging = false;
+        pVisual.classList.remove("p-dragging");
+        pStatus.textContent = showcase.getAttribute("data-status-ai-drag-end");
+      }
+      pTarget.addEventListener("pointerup", pEndDrag);
+      pTarget.addEventListener("pointercancel", pEndDrag);
+      pTarget.addEventListener("keydown", function (e) {
+        if (pVisual.getAttribute("data-mode") !== "ai") return;
+        var key = e.key;
+        if (key !== "ArrowLeft" && key !== "ArrowRight" && key !== "ArrowUp" && key !== "ArrowDown") return;
+        e.preventDefault();
+        var step = e.shiftKey ? 10 : 5;
+        var cur = parseFloat(pTarget.getAttribute("aria-valuenow")) - 90;
+        var nd =
+          key === "ArrowLeft" || key === "ArrowDown"
+            ? Math.max(D_MIN, cur - step)
+            : Math.min(D_MAX, cur + step);
+        pClear();
+        pStatus.textContent = showcase.getAttribute("data-status-ai-drag");
+        pPlaceTarget(nd);
+        pFollow(nd);
+      });
+    }
+
     pApply(0);
+    pPlaceTarget(-38);
 
     if ("IntersectionObserver" in window) {
       var pio = new IntersectionObserver(

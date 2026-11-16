@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Eray Burak Çakır — Backend yazılım geliştirici ve uygulamalı yapay zekâ</title>
+  <desc id="desc">Gerçek kullanım için güvenilir backend sistemleri ve yapay zekâ çözümleri.</desc>
+  <rect width="1200" height="630" fill="#F6F5F1"/>
+  <rect x="84" y="76" width="22" height="22" fill="#BC3E12"/>
+  <text x="124" y="97" fill="#43484F" font-family="DejaVu Sans Mono, monospace" font-size="23" font-weight="500">Eray Burak Çakır / Backend yazılım geliştirici</text>
+  <g fill="#1B1E22" font-family="DejaVu Sans, Arial, sans-serif" font-size="76" font-weight="700">
+    <text x="84" y="205">Güvenilir backend</text>
+    <text x="84" y="303">sistemleri ve yapay</text>
+    <text x="84" y="401">zekâ çözümleri.</text>
+  </g>
+  <line x1="84" y1="566" x2="1116" y2="566" stroke="#DBD7CE" stroke-width="1"/>
+  <text x="84" y="602" fill="#5D636C" font-family="DejaVu Sans Mono, monospace" font-size="18">Java · Spring Boot · Full-stack platformlar · Otonom sistemler</text>
+</svg>

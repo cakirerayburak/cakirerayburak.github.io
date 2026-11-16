@@ -661,3 +661,10 @@ html.no-io [data-reveal] {
   opacity: 1 !important;
   transform: none !important;
 }
+
+@media print {
+  html.js [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

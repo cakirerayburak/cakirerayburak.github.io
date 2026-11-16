@@ -1,6 +1,6 @@
 {
   "name": "Precision Document",
-  "usage": "Design system for cakirerayburak.github.io. Light engineering-document surface, graphite ink, one redline accent (vermilion). Sharp containers (radius 0), 2px radius on interactive controls only. Type: Archivo variable (display + body), IBM Plex Mono (metadata).",
+  "usage": "Design system for cakirerayburak.github.io. Engineering-document aesthetic with two themes: DARK is the default (root tokens), LIGHT via html[data-theme=light] (user toggle, persisted). Sharp containers (radius 0), 2px radius on interactive controls only. Type: Archivo variable (display + body), IBM Plex Mono (metadata). Print always uses the light palette.",
   "colors": [
     { "token": "paper", "value": "#F6F5F1", "use": "page background" },
     { "token": "paper-raised", "value": "#FDFCFA", "use": "raised surface" },
@@ -16,7 +16,19 @@
     { "token": "band-ink", "value": "#EDEBE5", "use": "text on dark band" },
     { "token": "band-ink-2", "value": "#A9AFB7", "use": "secondary text on dark band" },
     { "token": "band-hairline", "value": "#353B42", "use": "rules on dark band" },
-    { "token": "white", "value": "#FFFFFF", "use": "text on accent fills, selection" }
+    { "token": "white", "value": "#FFFFFF", "use": "text on accent fills, selection" },
+    { "token": "dark/paper", "value": "#14171A", "use": "default dark page background" },
+    { "token": "dark/paper-raised", "value": "#191D21", "use": "dark raised surface" },
+    { "token": "dark/ink", "value": "#EDEBE5", "use": "dark theme primary text" },
+    { "token": "dark/ink-2", "value": "#A9AFB7", "use": "dark theme secondary text" },
+    { "token": "dark/ink-3", "value": "#878D96", "use": "dark theme metadata text" },
+    { "token": "dark/hairline", "value": "#2A2F35", "use": "dark theme rules" },
+    { "token": "dark/hairline-strong", "value": "#3A4048", "use": "dark theme strong rules and borders" },
+    { "token": "dark/accent", "value": "#C74A1C", "use": "dark theme accent fills/marks" },
+    { "token": "dark/accent-text", "value": "#E06B3A", "use": "dark theme accent as text (AA on dark paper)" },
+    { "token": "dark/band-bg", "value": "#1B1F24", "use": "contact band on dark theme (elevated)" },
+    { "token": "dark/band-ink-2", "value": "#9BA1AA", "use": "contact band secondary text on dark theme" },
+    { "token": "dark/band-hairline", "value": "#313842", "use": "contact band rules on dark theme" }
   ],
   "fonts": [
     { "token": "sans", "value": "Archivo, 'Helvetica Neue', Arial, sans-serif", "use": "display and body" },

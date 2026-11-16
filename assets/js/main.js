@@ -40,6 +40,36 @@
     });
   }
 
+  /* ---- Theme (dark default, persisted light toggle) ---- */
+  var themeBtn = document.querySelector(".theme-btn");
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  var THEME_BG = { dark: "#14171A", light: "#F6F5F1" };
+
+  function currentTheme() {
+    return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  }
+
+  function syncThemeUi() {
+    var t = currentTheme();
+    if (themeBtn) {
+      themeBtn.setAttribute(
+        "aria-label",
+        themeBtn.getAttribute(t === "dark" ? "data-label-light" : "data-label-dark") || "Toggle theme"
+      );
+    }
+    if (themeMeta) themeMeta.setAttribute("content", THEME_BG[t]);
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      var next = currentTheme() === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("siteTheme", next); } catch (e) {}
+      syncThemeUi();
+    });
+  }
+  syncThemeUi();
+
   /* ---- Scroll reveal (IO, once) ---- */
   var revealEls = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window && revealEls.length) {

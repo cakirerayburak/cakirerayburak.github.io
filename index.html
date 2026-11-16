@@ -1,33 +1,360 @@
-    <!DOCTYPE html>
-    <html lang="tr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Eray Burak ÇAKIR</title>
-        <link rel="icon" href="assets/ico/homepage.ico" type="image/x-icon">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <header class="hero-section" id="anasayfa">
-            <nav class="navbar">
-                <div class="logo">
-                    <a href="index.html" id="logo-text">AI2X</a> <span id="current-time"></span>
-                </div>
-                <div class="nav-toggle">☰</div>  <!-- Mobil icin hamburger menu -->
-                <ul class="nav-links">
-                    <li><a href="index.html">Anasayfa</a></li>
-                    <li><a href="about.html">Hakkımda</a></li>
-                    <li><a href="projects.html">Projelerim</a></li>
-                    <li><a href="contact.html">İletişim</a></li>
-                </ul>
-            </nav>
-            <div class="hero-content">
-                <h1 id="intro-title">Merhaba! Ben Eray Burak ÇAKIR</h1>
-                <p class="subtitle" id="dynamic-text"></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eray Burak Çakır - Software Engineer</title>
+  <meta name="description" content="Portfolio of Eray Burak Çakır, a computer engineer working across backend development, applied AI and autonomous systems. Turkcell, TEKNOFEST, TÜBİTAK and a registered patent.">
+  <link rel="canonical" href="https://cakirerayburak.github.io/">
+  <link rel="alternate" hreflang="en" href="https://cakirerayburak.github.io/">
+  <link rel="alternate" hreflang="tr" href="https://cakirerayburak.github.io/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://cakirerayburak.github.io/">
+
+  <meta name="theme-color" content="#F6F5F1">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Eray Burak Çakır">
+  <meta property="og:title" content="Eray Burak Çakır - Software Engineer">
+  <meta property="og:description" content="Computer engineer working across backend development, applied AI and autonomous systems.">
+  <meta property="og:url" content="https://cakirerayburak.github.io/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
+  <meta property="og:image" content="https://cakirerayburak.github.io/assets/img/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://cakirerayburak.github.io/assets/img/og.png">
+
+  <link rel="preload" href="assets/fonts/archivo-62-125w100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/archivo-62-125w100-900-latinext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Eray Burak Çakır",
+    "jobTitle": "Software Engineer",
+    "email": "mailto:cakirerayburak@gmail.com",
+    "url": "https://cakirerayburak.github.io/",
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Recep Tayyip Erdoğan University" },
+    "knowsAbout": ["Java", "Spring Boot", "REST API", "TypeScript", "Next.js", "NestJS", "PostgreSQL", "PyTorch", "Computer Vision", "YOLO", "TensorRT", "ROS 2", "Robotics"],
+    "sameAs": [
+      "https://www.linkedin.com/in/eray-burak-cakir/",
+      "https://github.com/cakirerayburak"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="wordmark" href="#top" aria-label="Eray Burak Çakır, home">
+        <span class="mark" aria-hidden="true"></span>
+        Eray Burak Çakır
+      </a>
+      <nav class="nav-desktop" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="lang" href="tr/" hreflang="tr" lang="tr">TR</a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="icon icon-list" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg>
+        <svg class="icon icon-x" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="lang" href="tr/" hreflang="tr" lang="tr">Türkçe</a>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="top" aria-label="Introduction">
+      <div class="container hero-inner">
+        <p class="hero-meta"><span class="mono">Software engineer / Backend and applied AI</span></p>
+        <h1 data-reveal>Backend systems and applied AI, proven in the real world.</h1>
+        <p class="hero-sub" data-reveal style="--ri: 1;">Computer engineer. Recent work: Spring Boot microservices at Turkcell, a public full-stack platform, and national robotics finals.</p>
+        <div class="hero-actions" data-reveal style="--ri: 2;">
+          <a class="btn btn-primary" href="#work">
+            View selected work
+            <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg>
+          </a>
+          <a class="btn btn-secondary" href="assets/docs/eray-burak-cakir-cv.pdf" download>
+            <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,112V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v24a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v72a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"/></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-rule" id="work" aria-labelledby="work-h">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="work-h">Selected work</h2>
+        </div>
+
+        <article class="project project-featured" data-reveal>
+          <header class="project-top">
+            <h3>Rize Kültür ve Sanat Sokağı</h3>
+            <p class="mono">2026 / Full-stack platform</p>
+          </header>
+          <div class="project-body">
+            <div class="project-desc">
+              <p>Public platform for Rize's culture and art center covering course applications, QR-based attendance, events and reservations, and role-based administration. As one of three developers I built core modules with Next.js 15, TypeScript and NestJS 11, and worked across the Turborepo setup, Prisma and PostgreSQL data layer, Vitest and Playwright tests, and Docker-based CI.</p>
+              <a class="xlink" href="https://rizekulturvesanatmerkezi.com/" target="_blank" rel="noopener">
+                Live site
+                <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+              </a>
             </div>
-        </header>
-        
-        <script src="js/script.js"></script>
-        <script src="js/home.js"></script>
-    </body>
-    </html>
+            <div class="stack">
+              <p class="mono stack-label">Stack</p>
+              <p class="stack-list mono">Next.js 15, TypeScript, NestJS 11, Prisma, PostgreSQL, Turborepo, Vitest, Playwright, Docker</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-reveal>
+          <header class="project-top">
+            <h3>TEKNOFEST 5G</h3>
+            <p class="mono">2025 / 4th place in Türkiye</p>
+          </header>
+          <div class="project-body">
+            <div class="project-desc">
+              <p>Hybrid positioning system combining RSRP and SINR signal measurements with Kalman filtering, developed for the TEKNOFEST 5G category. Our team ranked 4th in Türkiye.</p>
+              <a class="xlink" href="https://drdogrulama.sanayi.gov.tr/tr/verify/23662789655067/" target="_blank" rel="noopener">
+                Official verification
+                <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+              </a>
+            </div>
+            <div class="stack">
+              <p class="mono stack-label">Focus</p>
+              <p class="stack-list mono">5G RSRP/SINR measurements, Kalman filtering, hybrid positioning</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-reveal>
+          <header class="project-top">
+            <h3>TEKNOFEST Robotaksi</h3>
+            <p class="mono">2024 / Finalist</p>
+          </header>
+          <div class="project-body">
+            <div class="project-desc">
+              <p>Autonomous driving software for the Robotaksi competition: lane keeping, obstacle detection, traffic-sign recognition and sensor fusion. The team placed first in the simulation test and reached the national finals.</p>
+              <a class="xlink" href="https://drdogrulama.sanayi.gov.tr/tr/verify/16783681028270/" target="_blank" rel="noopener">
+                Official verification
+                <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+              </a>
+            </div>
+            <div class="stack">
+              <p class="mono stack-label">Focus</p>
+              <p class="stack-list mono">Lane tracking, obstacle detection, traffic-sign recognition, sensor fusion</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-reveal>
+          <header class="project-top">
+            <h3>TÜBİTAK 2209-A</h3>
+            <p class="mono">Research / Project lead</p>
+          </header>
+          <div class="project-body">
+            <div class="project-desc">
+              <p>As project lead in TÜBİTAK's national student research support program: a real-time face-recognition security system on Jetson Nano, designed around energy efficiency.</p>
+            </div>
+            <div class="stack">
+              <p class="mono stack-label">Focus</p>
+              <p class="stack-list mono">Jetson Nano, real-time face recognition, energy efficiency</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-rule" id="experience" aria-labelledby="experience-h">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="experience-h">Experience</h2>
+        </div>
+        <ol class="xp-list">
+          <li class="xp" data-reveal>
+            <p class="mono xp-when">07 - 08 / 2026</p>
+            <div class="xp-what">
+              <h3>Backend Developer Intern <span class="xp-note">/ Summer</span></h3>
+              <p class="mono xp-org">Turkcell / Fixed Campaign Solutions</p>
+              <p>Developed the data model, service and data-access layers of a Java-based CRUD application, and worked on its workflows and troubleshooting.</p>
+            </div>
+          </li>
+          <li class="xp" data-reveal>
+            <p class="mono xp-when">02 - 05 / 2026</p>
+            <div class="xp-what">
+              <h3>Backend Developer Intern <span class="xp-note">/ Long term</span></h3>
+              <p class="mono xp-org">Turkcell / Fixed Campaign Solutions</p>
+              <p>Developed data fields, business rules and state-based filtering for contract details in Java and Spring Boot CRM microservices. Worked on REST APIs, DTOs and the JPA data-access layer, and took part in pull requests, code review and resolving Git merge conflicts.</p>
+            </div>
+          </li>
+          <li class="xp" data-reveal>
+            <p class="mono xp-when">2025</p>
+            <div class="xp-what">
+              <h3>AI &amp; Cybersecurity Intern <span class="xp-note">/ Summer</span></h3>
+              <p class="mono xp-org">Renewasoft / Rize</p>
+              <p>Anomaly detection and attack classification with DNN, LSTM and autoencoder models on the CICIoT2023 dataset, with data analysis and automated reporting.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-rule" id="expertise" aria-labelledby="expertise-h">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="expertise-h">Expertise</h2>
+        </div>
+        <div class="skill-grid">
+          <div class="skill-group" data-reveal>
+            <h3>Programming</h3>
+            <p class="skill-items">Java, Python, C++, C#, SQL</p>
+          </div>
+          <div class="skill-group" data-reveal style="--ri: 1;">
+            <h3>Backend &amp; data</h3>
+            <p class="skill-items">Spring Boot, REST API, JPA, FastAPI, PostgreSQL, Oracle SQL</p>
+          </div>
+          <div class="skill-group" data-reveal>
+            <h3>Tools &amp; DevOps</h3>
+            <p class="skill-items">Git, Maven, Docker, Linux, Nginx</p>
+          </div>
+          <div class="skill-group" data-reveal style="--ri: 1;">
+            <h3>AI &amp; autonomous systems</h3>
+            <p class="skill-items">PyTorch, TensorFlow, OpenCV, YOLO, TensorRT, ROS 2, Jetson Orin/Nano, Unity</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-rule" id="recognition" aria-labelledby="recognition-h">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="recognition-h">Recognition &amp; research</h2>
+        </div>
+        <div class="rec-grid">
+          <div class="rec-patent" data-reveal>
+            <p class="mono">Registered patent / Co-inventor / 2026 / App. no. 2024/018955</p>
+            <h3>Yapay Zekâ Kontrollü Dinamik Antenli Modem ile Sinyal ve Kapsama Optimizasyonu Sistemi ve Yöntemi</h3>
+            <p class="rec-gloss">System and method for signal and coverage optimization with an AI-controlled dynamic-antenna modem.</p>
+          </div>
+          <div class="rec-side">
+            <div class="rec-block" data-reveal>
+              <p class="mono stack-label">Recognition</p>
+              <ul class="rec-list">
+                <li><span class="mono">2025</span><span>TEKNOFEST 5G, 4th place in Türkiye</span></li>
+                <li><span class="mono">2024</span><span>TEKNOFEST Robotaksi, finalist</span></li>
+                <li><span class="mono">2024</span><span>TÜBİTAK 2209-A, project lead</span></li>
+              </ul>
+            </div>
+            <div class="rec-block" data-reveal>
+              <p class="mono stack-label">Research</p>
+              <ul class="rec-list">
+                <li><span class="mono">2025</span><span>IDEF Defenders of Tomorrow: CNN/LSTM-based UAV fault detection and Jetson flight telemetry analysis with the university team
+                  <a class="xlink" href="https://rteuai2x.idef.com.tr/" target="_blank" rel="noopener">
+                    Project page
+                    <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+                  </a>
+                </span></li>
+                <li><span class="mono" aria-hidden="true"></span><span>Autonomous object tracking: YOLOv8 with TensorRT running in real time on Jetson Orin, integrated with Unity</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-rule" id="about" aria-labelledby="about-h">
+      <div class="container about-grid">
+        <div class="about-prose">
+          <div class="section-head">
+            <h2 id="about-h">About</h2>
+          </div>
+          <p data-reveal>I am a computer engineer from Ordu, Türkiye, working across backend development, full-stack platforms and applied AI. Recent work ranges from Spring Boot CRM microservices at Turkcell to computer-vision systems on Jetson hardware.</p>
+          <p data-reveal style="--ri: 1;">What pulls me in is the distance between a working prototype and a dependable system: state handling, data models, edge cases, performance on constrained hardware. That interest has run through a live public platform, national TEKNOFEST rankings and a registered patent on AI-controlled antenna optimization.</p>
+          <p data-reveal style="--ri: 2;">I also build with AI2X, our university team for autonomous systems and AI projects.</p>
+        </div>
+        <aside class="about-facts" aria-label="Key facts">
+          <dl data-reveal>
+            <div class="fact">
+              <dt class="mono">Education</dt>
+              <dd>Computer Engineering, BSc<br>Recep Tayyip Erdoğan University<br>2021 - 2026</dd>
+            </div>
+            <div class="fact">
+              <dt class="mono">Languages</dt>
+              <dd>Turkish (native), English (B2)</dd>
+            </div>
+            <div class="fact">
+              <dt class="mono">Based in</dt>
+              <dd>Ordu, Türkiye</dd>
+            </div>
+            <div class="fact">
+              <dt class="mono">Team</dt>
+              <dd>
+                <a class="tlink" href="https://ai2xsoftware.com/" target="_blank" rel="noopener">AI2X, autonomous systems and AI</a>
+              </dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div class="band">
+    <section class="contact" id="contact" aria-labelledby="contact-h">
+      <div class="container contact-grid">
+        <div class="contact-lead">
+          <h2 id="contact-h">Get in touch</h2>
+          <p>For roles, collaborations or questions about my work, email is the fastest channel.</p>
+        </div>
+        <div class="contact-actions" data-reveal>
+          <a class="contact-mail" href="mailto:cakirerayburak@gmail.com">cakirerayburak@gmail.com</a>
+          <ul class="contact-links">
+            <li>
+              <a class="xlink" href="https://www.linkedin.com/in/eray-burak-cakir/" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></svg>
+                LinkedIn
+                <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="xlink" href="https://github.com/cakirerayburak" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></svg>
+                GitHub
+                <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p class="mono">© <span id="year">2026</span> Eray Burak Çakır</p>
+          <p class="mono">Hand-built with HTML, CSS and JavaScript. No frameworks.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

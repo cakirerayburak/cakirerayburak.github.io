@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://cakirerayburak.github.io/</loc>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cakirerayburak.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://cakirerayburak.github.io/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cakirerayburak.github.io/"/>
+  </url>
+  <url>
+    <loc>https://cakirerayburak.github.io/tr/</loc>
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cakirerayburak.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://cakirerayburak.github.io/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cakirerayburak.github.io/"/>
+  </url>
+</urlset>

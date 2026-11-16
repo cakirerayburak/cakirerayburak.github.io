@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cakirerayburak.github.io/sitemap.xml

@@ -686,6 +686,9 @@ body.menu-open { overflow: hidden; }
 #p-target {
   cursor: default;
   outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 .patent-visual[data-mode="ai"] #p-target {
   pointer-events: auto;

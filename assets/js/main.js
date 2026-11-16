@@ -333,6 +333,33 @@
       }
       pTarget.addEventListener("pointerup", pEndDrag);
       pTarget.addEventListener("pointercancel", pEndDrag);
+      /* Touch fallback: browsers that ignore touch-action on SVG elements
+         steal the gesture for scrolling and fire pointercancel. Canceling
+         the default keeps the drag alive; touch events keep targeting the
+         element the gesture started on, so no pointer capture is needed. */
+      function pTouchAngle(e) {
+        return pPointerAngle(e.changedTouches[0]);
+      }
+      pTarget.addEventListener("touchstart", function (e) {
+        if (pVisual.getAttribute("data-mode") !== "ai") return;
+        if (e.cancelable) e.preventDefault();
+        pClear();
+        pDragging = true;
+        pVisual.classList.add("p-dragging");
+        pStatus.textContent = showcase.getAttribute("data-status-ai-drag");
+        var a = pTouchAngle(e);
+        pPlaceTarget(a);
+        pFollow(a);
+      }, { passive: false });
+      pTarget.addEventListener("touchmove", function (e) {
+        if (!pDragging) return;
+        if (e.cancelable) e.preventDefault();
+        var a = pTouchAngle(e);
+        pPlaceTarget(a);
+        pFollow(a);
+      }, { passive: false });
+      pTarget.addEventListener("touchend", pEndDrag);
+      pTarget.addEventListener("touchcancel", pEndDrag);
       pTarget.addEventListener("keydown", function (e) {
         if (pVisual.getAttribute("data-mode") !== "ai") return;
         var key = e.key;

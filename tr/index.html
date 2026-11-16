@@ -14,6 +14,7 @@
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: dark)" href="../assets/favicon-dark.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/manifest.webmanifest">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Eray Burak Çakır">
@@ -35,6 +36,8 @@
 
   <link rel="preload" href="../assets/fonts/archivo-62-125w100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/archivo-62-125w100-900-latinext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/ibmplexmono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/ibmplexmono-500-latinext.woff2" as="font" type="font/woff2" crossorigin>
   <script>(function(){try{var t=localStorage.getItem("siteTheme");document.documentElement.setAttribute("data-theme",t==="light"?"light":"dark")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
   <link rel="stylesheet" href="../assets/css/main.css">
   <script type="application/ld+json">
@@ -73,6 +76,7 @@
         "email": "mailto:cakirerayburak@gmail.com",
         "image": "https://erayburakcakir.com.tr/assets/img/og-tr.png",
         "url": "https://erayburakcakir.com.tr/tr/",
+        "homeLocation": { "@type": "PostalAddress", "addressLocality": "Ordu", "addressCountry": "TR" },
         "alumniOf": {
           "@type": "CollegeOrUniversity",
           "name": "Recep Tayyip Erdoğan Üniversitesi"
@@ -120,7 +124,7 @@
           <li><a href="#experience">Deneyim</a></li>
           <li><a href="#about">Hakkımda</a></li>
           <li><a href="#contact">İletişim</a></li>
-          <li><a class="lang" href="../" hreflang="en" lang="en">EN</a></li>
+          <li><a class="lang" href="../" rel="alternate" hreflang="en" lang="en">EN</a></li>
         </ul>
       </nav>
       <button type="button" class="theme-btn" aria-label="Açık temaya geç" data-label-dark="Koyu temaya geç" data-label-light="Açık temaya geç">
@@ -139,7 +143,7 @@
     <a href="#experience">Deneyim</a>
     <a href="#about">Hakkımda</a>
     <a href="#contact">İletişim</a>
-    <a class="lang" href="../" hreflang="en" lang="en">English</a>
+    <a class="lang" href="../" rel="alternate" hreflang="en" lang="en">English</a>
   </div>
 
   <main id="main">
@@ -529,9 +533,11 @@
   </main>
 
   <div class="band">
+    <span class="band-ghost" aria-hidden="true">EBC</span>
     <section class="contact" id="contact" aria-labelledby="contact-h">
       <div class="container contact-grid">
         <div class="contact-lead">
+          <p class="mono contact-kicker">İletişim</p>
           <h2 id="contact-h">Bana yazın</h2>
           <p>Pozisyonlar, iş birlikleri veya çalışmalarım hakkında bana en hızlı e-postayla ulaşabilirsiniz.</p>
         </div>
@@ -539,20 +545,21 @@
           <a class="contact-mail" href="mailto:cakirerayburak@gmail.com">cakirerayburak@gmail.com</a>
           <ul class="contact-links">
             <li>
-              <a class="xlink" href="https://www.linkedin.com/in/eray-burak-cakir/" target="_blank" rel="noopener">
+              <a class="xlink" href="https://www.linkedin.com/in/eray-burak-cakir/" target="_blank" rel="noopener me">
                 <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></svg>
                 LinkedIn
                 <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
               </a>
             </li>
             <li>
-              <a class="xlink" href="https://github.com/cakirerayburak" target="_blank" rel="noopener">
+              <a class="xlink" href="https://github.com/cakirerayburak" target="_blank" rel="noopener me">
                 <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></svg>
                 GitHub
                 <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
               </a>
             </li>
           </ul>
+          <p class="mono contact-meta">Ordu, Türkiye · 40.98°K, 37.88°D</p>
         </div>
       </div>
     </section>

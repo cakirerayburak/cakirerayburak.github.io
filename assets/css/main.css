@@ -810,7 +810,7 @@ html.js .patent-showcase.patent-ready .p-fade { opacity: 1; }
 
 /* ---------- Contact band ---------- */
 .contact {
-  padding-block: var(--section-pad) var(--s7);
+  padding-block: calc(var(--section-pad) + var(--s3)) var(--s7);
 }
 .contact-grid {
   display: grid;
@@ -856,7 +856,50 @@ html.js .patent-showcase.patent-ready .p-fade { opacity: 1; }
   background: var(--band-bg);
   color: var(--band-ink);
   border-top: 1px solid var(--band-hairline);
+  position: relative;
+  overflow: hidden;
 }
+.contact-grid,
+.site-footer { position: relative; z-index: 1; }
+
+/* oversized outlined monogram - drafting-paper character for the band */
+.band-ghost {
+  position: absolute;
+  right: -0.04em;
+  bottom: -0.26em;
+  font-size: clamp(10rem, 22vw, 20rem);
+  font-weight: 800;
+  font-stretch: 76%;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--band-hairline);
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* section-label kicker with the brand square */
+.contact-kicker {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-bottom: var(--s3);
+}
+.contact-kicker::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  flex: none;
+  background: var(--accent-bright);
+}
+.contact-meta {
+  margin-top: var(--s5);
+  color: var(--band-ink-2);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
 .band ::selection { background: var(--accent-bright); color: var(--band-bg); }
 .band .mono { color: var(--band-ink-2); }
 .band .tlink { color: var(--band-ink); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }

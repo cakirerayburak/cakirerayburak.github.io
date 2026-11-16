@@ -11,7 +11,9 @@
   function setMenu(open) {
     if (!menuBtn || !menu) return;
     menuBtn.setAttribute("aria-expanded", String(open));
-    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    var openLabel = menuBtn.getAttribute("data-label-open") || "Open menu";
+    var closeLabel = menuBtn.getAttribute("data-label-close") || "Close menu";
+    menuBtn.setAttribute("aria-label", open ? closeLabel : openLabel);
     if (open) {
       menu.hidden = false;
       document.body.classList.add("menu-open");

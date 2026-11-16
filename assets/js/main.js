@@ -43,7 +43,7 @@
   /* ---- Theme (dark default, persisted light toggle) ---- */
   var themeBtn = document.querySelector(".theme-btn");
   var themeMeta = document.querySelector('meta[name="theme-color"]');
-  var THEME_BG = { dark: "#14171A", light: "#F6F5F1" };
+  var THEME_BG = { dark: "#101318", light: "#F5F3EE" };
 
   function currentTheme() {
     return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
@@ -171,7 +171,7 @@
           "rotate(" + d.toFixed(2) + " " + PIVOT.x + " " + PIVOT.y + ")"
         );
       }
-      if (pAngle) pAngle.textContent = "\u03B8 " + Math.round(90 + d) + "\u00B0";
+      if (pAngle) pAngle.textContent = "\u03B8 = " + Math.round(90 + d) + "\u00B0";
     }
 
     function pAnimateTo(target, duration, done) {

@@ -60,23 +60,23 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  /* Color - dark theme (default) */
-  --paper: #14171A;
-  --paper-raised: #191D21;
-  --ink: #EDEBE5;
-  --ink-2: #A9AFB7;
-  --ink-3: #878D96;
-  --hairline: #2A2F35;
-  --hairline-strong: #3A4048;
-  --accent: #C74A1C;        /* marks, fills, rules */
-  --accent-text: #E06B3A;   /* accent as small text / links (AA on dark paper) */
-  --accent-bright: #E06B3A; /* accent on band surfaces */
+  /* Color - dark theme (default): layered slate graphite */
+  --paper: #101318;
+  --paper-raised: #151922;
+  --ink: #ECEDEF;
+  --ink-2: #A8B0BC;
+  --ink-3: #7E8694;
+  --hairline: #262C37;
+  --hairline-strong: #343B49;
+  --accent: #C9501F;        /* marks, fills, rules */
+  --accent-text: #EC744A;   /* accent as small text / links (AA on dark paper) */
+  --accent-bright: #EC744A; /* accent on band surfaces */
 
   /* Contact/footer band - elevated surface on dark theme */
-  --band-bg: #1B1F24;
-  --band-ink: #EDEBE5;
-  --band-ink-2: #9BA1AA;
-  --band-hairline: #313842;
+  --band-bg: #1A2029;
+  --band-ink: #E8EAEE;
+  --band-ink-2: #969DAB;
+  --band-hairline: #2C3340;
 
   /* Type */
   --font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
@@ -111,41 +111,42 @@
 }
 
 html[data-theme="light"] {
-  --paper: #F6F5F1;
-  --paper-raised: #FDFCFA;
-  --ink: #1B1E22;
-  --ink-2: #43484F;
-  --ink-3: #5D636C;
-  --hairline: #DBD7CE;
-  --hairline-strong: #C7C2B7;
-  --accent: #BC3E12;
-  --accent-text: #A9370D;
-  --accent-bright: #E06B3A;
+  /* Light theme: deeper bone paper, harmonized slate grays */
+  --paper: #F5F3EE;
+  --paper-raised: #FCFBF8;
+  --ink: #191C21;
+  --ink-2: #40454E;
+  --ink-3: #5C6470;
+  --hairline: #D5D0C4;
+  --hairline-strong: #B3AB9C;
+  --accent: #B23A10;
+  --accent-text: #9E3208;
+  --accent-bright: #EC744A;
 
   /* Contact/footer band - the single deliberate inverted block on light */
-  --band-bg: #15181B;
-  --band-ink: #EDEBE5;
-  --band-ink-2: #A9AFB7;
-  --band-hairline: #353B42;
+  --band-bg: #12151B;
+  --band-ink: #ECEDEF;
+  --band-ink-2: #9AA1AD;
+  --band-hairline: #303743;
 }
 
 /* Print always uses the light palette */
 @media print {
   html[data-theme="dark"] {
-    --paper: #F6F5F1;
-    --paper-raised: #FDFCFA;
-    --ink: #1B1E22;
-    --ink-2: #43484F;
-    --ink-3: #5D636C;
-    --hairline: #DBD7CE;
-    --hairline-strong: #C7C2B7;
-    --accent: #BC3E12;
-    --accent-text: #A9370D;
-    --accent-bright: #E06B3A;
-    --band-bg: #15181B;
-    --band-ink: #EDEBE5;
-    --band-ink-2: #A9AFB7;
-    --band-hairline: #353B42;
+    --paper: #F5F3EE;
+    --paper-raised: #FCFBF8;
+    --ink: #191C21;
+    --ink-2: #40454E;
+    --ink-3: #5C6470;
+    --hairline: #D5D0C4;
+    --hairline-strong: #B3AB9C;
+    --accent: #B23A10;
+    --accent-text: #9E3208;
+    --accent-bright: #EC744A;
+    --band-bg: #12151B;
+    --band-ink: #ECEDEF;
+    --band-ink-2: #9AA1AD;
+    --band-hairline: #303743;
   }
   body { background: #fff; }
 }
@@ -588,6 +589,7 @@ body.menu-open { overflow: hidden; }
   margin-bottom: var(--s8);
 }
 .patent-meta { margin-bottom: var(--s4); }
+.patent-meta .nw { white-space: nowrap; }
 .patent-info h3 {
   font-size: clamp(1.3rem, 1rem + 1.1vw, 1.7rem);
   max-width: 34ch;
@@ -639,8 +641,16 @@ body.menu-open { overflow: hidden; }
 .p-label {
   font-family: var(--font-mono);
   font-size: 10.5px;
-  fill: var(--ink-3);
+  fill: var(--ink-2);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
 }
+#p-angle-text { fill: var(--accent-text); }
+#p-coverage-wide path,
+#p-range-arc path { stroke: var(--ink-2); }
+#p-labels line { stroke: var(--ink-2); }
 
 /* mode layers (opacity transitions only) */
 #p-coverage-wide,
@@ -817,7 +827,7 @@ html.js .patent-showcase.patent-ready .p-fade { opacity: 1; }
   margin-top: var(--s6);
 }
 .band .xlink { color: var(--band-ink-2); font-size: 1rem; }
-.band .xlink:hover { color: var(--band-ink); }
+.band .xlink:hover { color: var(--accent-bright); }
 .band .xlink .icon { width: 1.15rem; height: 1.15rem; }
 @media (max-width: 63.99em) {
   .contact-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s6); }
@@ -827,10 +837,11 @@ html.js .patent-showcase.patent-ready .p-fade { opacity: 1; }
 .band {
   background: var(--band-bg);
   color: var(--band-ink);
+  border-top: 1px solid var(--band-hairline);
 }
 .band ::selection { background: var(--accent-bright); color: var(--band-bg); }
 .band .mono { color: var(--band-ink-2); }
-.band .tlink { color: var(--band-ink); text-decoration-color: var(--band-hairline); }
+.band .tlink { color: var(--band-ink); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
 .band .tlink:hover { color: var(--accent-bright); text-decoration-color: var(--accent-bright); }
 
 .site-footer {

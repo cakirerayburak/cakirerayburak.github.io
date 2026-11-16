@@ -478,6 +478,73 @@ body.menu-open { overflow: hidden; }
   .project-body { grid-template-columns: minmax(0, 1fr); gap: var(--s4); }
 }
 
+/* ---------- Experience timeline ---------- */
+.xp-list { display: grid; gap: 0; }
+.xp {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: var(--s5);
+  padding-block: var(--s6);
+}
+.xp + .xp { border-top: 1px solid var(--hairline); }
+.xp-when { padding-top: 0.35rem; }
+.xp-what h3 { margin-bottom: var(--s2); }
+.xp-note { color: var(--ink-3); font-weight: 500; }
+.xp-org { margin-bottom: var(--s3); }
+.xp-what > p:not(.mono) { color: var(--ink-2); }
+@media (max-width: 47.99em) {
+  .xp { grid-template-columns: minmax(0, 1fr); gap: var(--s2); }
+}
+
+/* ---------- Expertise quadrant ---------- */
+.skill-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.skill-group { padding: var(--s6) var(--s5) var(--s6) 0; }
+.skill-group:nth-child(even) {
+  border-left: 1px solid var(--hairline);
+  padding-left: var(--s5);
+}
+.skill-group:nth-child(n + 3) { border-top: 1px solid var(--hairline); }
+.skill-group h3 { margin-bottom: var(--s3); }
+.skill-items { color: var(--ink-2); max-width: 38ch; }
+@media (max-width: 47.99em) {
+  .skill-grid { grid-template-columns: minmax(0, 1fr); }
+  .skill-group { padding-inline: 0; }
+  .skill-group:nth-child(even) { border-left: none; padding-left: 0; }
+  .skill-group:nth-child(n + 3) { border-top: 1px solid var(--hairline); }
+}
+
+/* ---------- Recognition & research ---------- */
+.rec-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--s7);
+  align-items: start;
+}
+.rec-patent .mono { margin-bottom: var(--s4); }
+.rec-patent h3 {
+  font-size: clamp(1.35rem, 1rem + 1.2vw, 1.75rem);
+  max-width: 30ch;
+  margin-bottom: var(--s3);
+}
+.rec-gloss { color: var(--ink-2); font-size: var(--text-small); max-width: 52ch; }
+
+.rec-side { display: grid; gap: var(--s6); }
+.rec-list li {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  gap: var(--s3);
+  padding-block: var(--s3);
+  color: var(--ink-2);
+}
+.rec-list li + li { border-top: 1px solid var(--hairline); }
+.rec-list .xlink { margin-top: var(--s2); }
+@media (max-width: 63.99em) {
+  .rec-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s6); }
+}
+
 /* ---------- Footer / contact band ---------- */
 .band {
   background: var(--band-bg);

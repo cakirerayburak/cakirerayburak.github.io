@@ -519,26 +519,149 @@ body.menu-open { overflow: hidden; }
   .skill-group:nth-child(n + 3) { border-top: 1px solid var(--hairline); }
 }
 
-/* ---------- Recognition & research ---------- */
+/* ---------- Patent showcase ---------- */
+.patent-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+  gap: var(--s7);
+  align-items: start;
+  border-top: 2px solid var(--accent);
+  padding-top: var(--s4);
+  margin-bottom: var(--s8);
+}
+.patent-meta { margin-bottom: var(--s4); }
+.patent-info h3 {
+  font-size: clamp(1.3rem, 1rem + 1.1vw, 1.7rem);
+  max-width: 34ch;
+  margin-bottom: var(--s4);
+}
+.patent-desc { color: var(--ink-2); font-size: var(--text-small); margin-bottom: var(--s5); }
+
+.patent-facts { border-top: 1px solid var(--hairline); }
+.patent-facts li {
+  padding-block: var(--s2);
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink-2);
+}
+.patent-facts li strong { color: var(--ink); font-weight: 500; }
+
+.patent-details { margin-top: var(--s5); }
+.patent-details summary {
+  cursor: pointer;
+  font-size: var(--text-small);
+  font-weight: 560;
+  color: var(--ink);
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 0.25rem;
+}
+.patent-details summary::-webkit-details-marker { display: none; }
+.patent-details summary::before {
+  content: "+";
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--accent-text);
+  width: 1rem;
+}
+.patent-details[open] summary::before { content: "-"; }
+.patent-details-body { padding-top: var(--s3); }
+.patent-details-body p { font-size: var(--text-small); color: var(--ink-2); }
+.patent-details-body p + p { margin-top: var(--s2); }
+.patent-details-body strong { color: var(--ink); font-weight: 560; }
+
+.patent-figure { margin: 0; }
+.patent-figure svg { width: 100%; height: auto; }
+.patent-figure figcaption {
+  margin-top: var(--s2);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.p-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  fill: var(--ink-3);
+}
+
+/* mode layers (opacity transitions only) */
+#p-coverage-wide,
+#p-beam-narrow,
+#p-target { transition: opacity 0.45s var(--ease-out); }
+#p-beam-narrow { opacity: 0.15; }
+#p-target { opacity: 0; }
+.patent-visual[data-mode="directional"] #p-coverage-wide,
+.patent-visual[data-mode="ai"] #p-coverage-wide { opacity: 0.18; }
+.patent-visual[data-mode="directional"] #p-beam-narrow,
+.patent-visual[data-mode="ai"] #p-beam-narrow { opacity: 1; }
+.patent-visual[data-mode="ai"] #p-target { opacity: 1; }
+
+.patent-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  margin-top: var(--s5);
+}
+.patent-btn {
+  font-size: var(--text-small);
+  font-weight: 560;
+  color: var(--ink-2);
+  border: 1px solid var(--hairline-strong);
+  border-radius: 2px;
+  padding: 0.55rem 0.9rem;
+  min-height: 2.75rem;
+  transition: color var(--t-fast) var(--ease-out),
+              border-color var(--t-fast) var(--ease-out),
+              background-color var(--t-fast) var(--ease-out);
+}
+.patent-btn:hover { color: var(--ink); border-color: var(--ink); }
+.patent-btn[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.patent-status {
+  margin-top: var(--s3);
+  font-size: 0.75rem;
+  line-height: 1.55;
+  max-width: 60ch;
+}
+
+/* draw-in on first view (progressive enhancement) */
+html.js .patent-showcase .p-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+html.js .patent-showcase.patent-ready .p-draw {
+  transition: stroke-dashoffset 0.9s var(--ease-out) var(--pd, 0ms);
+  stroke-dashoffset: 0;
+}
+html.js .patent-showcase .p-fade {
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out) var(--pd, 0ms);
+}
+html.js .patent-showcase.patent-ready .p-fade { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  html.js .patent-showcase .p-draw {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+  html.js .patent-showcase .p-fade { opacity: 1; transition: none; }
+  #p-coverage-wide, #p-beam-narrow, #p-target { transition: none; }
+}
+
+@media (max-width: 63.99em) {
+  .patent-showcase { grid-template-columns: minmax(0, 1fr); gap: var(--s6); margin-bottom: var(--s7); }
+}
+
+/* ---------- Recognition & research lists ---------- */
 .rec-grid {
   display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--s7);
   align-items: start;
 }
-.rec-patent {
-  border-top: 2px solid var(--accent);
-  padding-top: var(--s4);
-}
-.rec-patent .mono { margin-bottom: var(--s4); }
-.rec-patent h3 {
-  font-size: clamp(1.35rem, 1rem + 1.2vw, 1.75rem);
-  max-width: 30ch;
-  margin-bottom: var(--s3);
-}
-.rec-gloss { color: var(--ink-2); font-size: var(--text-small); max-width: 52ch; }
-
-.rec-side { display: grid; gap: var(--s6); }
 .rec-list li {
   display: grid;
   grid-template-columns: 3.5rem minmax(0, 1fr);

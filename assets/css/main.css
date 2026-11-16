@@ -638,8 +638,10 @@ body.menu-open { overflow: hidden; }
   padding-block: var(--s5);
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s3) var(--s6);
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 .footer-bottom .mono { color: var(--band-ink-2); }
 

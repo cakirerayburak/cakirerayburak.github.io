@@ -41,7 +41,7 @@
   }
 
   /* ---- Theme (dark default, persisted light toggle) ---- */
-  var themeBtn = document.querySelector(".theme-btn");
+  var themeBtns = document.querySelectorAll(".theme-btn");
   var themeMeta = document.querySelector('meta[name="theme-color"]');
   var THEME_BG = { dark: "#101318", light: "#F5F3EE" };
 
@@ -51,23 +51,23 @@
 
   function syncThemeUi() {
     var t = currentTheme();
-    if (themeBtn) {
-      themeBtn.setAttribute(
+    themeBtns.forEach(function (btn) {
+      btn.setAttribute(
         "aria-label",
-        themeBtn.getAttribute(t === "dark" ? "data-label-light" : "data-label-dark") || "Toggle theme"
+        btn.getAttribute(t === "dark" ? "data-label-light" : "data-label-dark") || "Toggle theme"
       );
-    }
+    });
     if (themeMeta) themeMeta.setAttribute("content", THEME_BG[t]);
   }
 
-  if (themeBtn) {
-    themeBtn.addEventListener("click", function () {
+  themeBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
       var next = currentTheme() === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", next);
       try { localStorage.setItem("siteTheme", next); } catch (e) {}
       syncThemeUi();
     });
-  }
+  });
   syncThemeUi();
 
   /* ---- Scroll reveal (IO, once) ---- */

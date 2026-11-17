@@ -120,23 +120,55 @@
     .call(navLinks, function (a) { return document.querySelector(a.hash); })
     .filter(Boolean);
 
+  function navSetCurrent(hash) {
+    navLinks.forEach(function (a) {
+      if (a.hash === hash) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
+    });
+  }
+
   if ("IntersectionObserver" in window && sections.length) {
+    function navAtBottom() {
+      return (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 8
+      );
+    }
+    function navForceLast() {
+      navSetCurrent("#" + sections[sections.length - 1].id);
+    }
     var sectionIO = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          navLinks.forEach(function (a) {
-            if (a.hash === "#" + entry.target.id) {
-              a.setAttribute("aria-current", "true");
-            } else {
-              a.removeAttribute("aria-current");
-            }
-          });
+          /* The last section (contact) can sit below the observer band when
+             the page reaches max scroll - keep it active at the bottom edge,
+             even for late IO deliveries. */
+          if (navAtBottom()) navForceLast();
+          else navSetCurrent("#" + entry.target.id);
         });
       },
-      { rootMargin: "-40% 0px -55% 0px" }
+      { rootMargin: "-40% 0px -50% 0px" }
     );
     sections.forEach(function (s) { sectionIO.observe(s); });
+
+    /* Full recompute on scroll: sections that were already inside the
+       observer band never re-fire IO, so leaving the bottom edge (or any
+       tall-section overlap) needs a geometric fallback. */
+    function navRecompute() {
+      var line = window.innerHeight * 0.45;
+      var current = sections[0];
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].getBoundingClientRect().top <= line) current = sections[i];
+      }
+      navSetCurrent("#" + current.id);
+    }
+    function navCheckScroll() {
+      if (navAtBottom()) navForceLast();
+      else navRecompute();
+    }
+    window.addEventListener("scroll", navCheckScroll, { passive: true });
+    navCheckScroll();
   }
 
   /* ---- Patent showcase (deterministic mode machine) ---- */

@@ -7,12 +7,14 @@
   <meta name="description" content="Portfolio of backend software engineer Eray Burak Çakır: Java and Spring Boot services, full-stack platforms, applied AI, and autonomous systems.">
   <link rel="canonical" href="https://erayburakcakir.com.tr/">
   <link rel="alternate" hreflang="en" href="https://erayburakcakir.com.tr/">
-  <link rel="alternate" hreflang="tr" href="https://erayburakcakir.com.tr/tr/">
+  <link rel="alternate" hreflang="tr-TR" href="https://erayburakcakir.com.tr/tr/">
   <link rel="alternate" hreflang="x-default" href="https://erayburakcakir.com.tr/">
 
   <meta name="theme-color" content="#101318">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: dark)" href="assets/favicon-dark.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="assets/manifest.webmanifest">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Eray Burak Çakır">
@@ -34,21 +36,75 @@
 
   <link rel="preload" href="assets/fonts/archivo-62-125w100-900-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/archivo-62-125w100-900-latinext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibmplexmono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibmplexmono-500-latinext.woff2" as="font" type="font/woff2" crossorigin>
   <script>(function(){try{var t=localStorage.getItem("siteTheme");document.documentElement.setAttribute("data-theme",t==="light"?"light":"dark")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
   <link rel="stylesheet" href="assets/css/main.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Eray Burak Çakır",
-    "jobTitle": "Backend Software Engineer",
-    "email": "mailto:cakirerayburak@gmail.com",
-    "url": "https://erayburakcakir.com.tr/",
-    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Recep Tayyip Erdoğan University" },
-    "knowsAbout": ["Java", "Spring Boot", "REST API", "TypeScript", "Next.js", "NestJS", "PostgreSQL", "PyTorch", "Computer Vision", "YOLO", "TensorRT", "ROS 2", "Robotics"],
-    "sameAs": [
-      "https://www.linkedin.com/in/eray-burak-cakir/",
-      "https://github.com/cakirerayburak"
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://erayburakcakir.com.tr/#profilepage",
+        "url": "https://erayburakcakir.com.tr/",
+        "name": "Eray Burak Çakır | Backend Software Engineer & Applied AI",
+        "inLanguage": "en",
+        "dateModified": "2026-11-17",
+        "isPartOf": {
+          "@id": "https://erayburakcakir.com.tr/#website"
+        },
+        "about": {
+          "@id": "https://erayburakcakir.com.tr/#person"
+        },
+        "mainEntity": {
+          "@id": "https://erayburakcakir.com.tr/#person"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://erayburakcakir.com.tr/#website",
+        "url": "https://erayburakcakir.com.tr/",
+        "name": "Eray Burak Çakır",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://erayburakcakir.com.tr/#person",
+        "name": "Eray Burak Çakır",
+        "jobTitle": "Backend Software Engineer",
+        "email": "mailto:cakirerayburak@gmail.com",
+        "image": "https://erayburakcakir.com.tr/assets/img/og-en.png",
+        "url": "https://erayburakcakir.com.tr/",
+        "homeLocation": { "@type": "PostalAddress", "addressLocality": "Ordu", "addressCountry": "TR" },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Recep Tayyip Erdoğan University"
+        },
+        "knowsAbout": [
+          "Java",
+          "Spring Boot",
+          "REST API",
+          "TypeScript",
+          "Next.js",
+          "NestJS",
+          "PostgreSQL",
+          "PyTorch",
+          "Computer Vision",
+          "YOLO",
+          "TensorRT",
+          "ROS 2",
+          "Robotics"
+        ],
+        "knowsLanguage": [
+          "tr",
+          "en"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/eray-burak-cakir/",
+          "https://github.com/cakirerayburak"
+        ]
+      }
     ]
   }
   </script>
@@ -59,7 +115,7 @@
   <header class="site-header">
     <div class="container header-row">
       <a class="wordmark" href="#top" aria-label="Eray Burak Çakır, home">
-        <span class="mark" aria-hidden="true"></span>
+        <svg class="mark-svg" viewBox="0 0 192 192" aria-hidden="true" focusable="false"><rect width="192" height="192" rx="43" fill="#142236"/><g fill="none" stroke="#FFFFFF" stroke-linecap="square" stroke-linejoin="miter"><path d="M58 70 L86 96 L58 122" stroke-width="12"/><path d="M104 122H140" stroke-width="12" class="mark-cursor"/><path d="M45 47H77 M45 47V59 M147 47H116 M147 47V59 M45 145H77 M45 145V133 M147 145H116 M147 145V133" stroke-width="6"/></g></svg>
         Eray Burak Çakır
       </a>
       <nav class="nav-desktop" aria-label="Primary">
@@ -68,7 +124,7 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="lang" href="tr/" hreflang="tr" lang="tr">TR</a></li>
+          <li><a class="lang" href="tr/" rel="alternate" hreflang="tr" lang="tr">TR</a></li>
         </ul>
       </nav>
       <button type="button" class="theme-btn" aria-label="Switch to light mode" data-label-dark="Switch to dark mode" data-label-light="Switch to light mode">
@@ -87,14 +143,14 @@
     <a href="#experience">Experience</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
-    <a class="lang" href="tr/" hreflang="tr" lang="tr">Türkçe</a>
+    <a class="lang" href="tr/" rel="alternate" hreflang="tr" lang="tr">Türkçe</a>
   </div>
 
   <main id="main">
     <section class="hero" id="top" aria-label="Introduction">
       <div class="container hero-inner">
         <p class="hero-meta"><span class="mono">Backend software engineer / Applied AI</span></p>
-        <h1 data-reveal>I build reliable backend systems and applied AI for real-world use.</h1>
+        <h1 data-reveal>I build reliable backend systems and applied-AI solutions for real-world use.</h1>
         <p class="hero-sub" data-reveal style="--ri: 1;">My work spans Spring Boot CRM microservices at Turkcell, a live public platform, and autonomous-driving software that reached the TEKNOFEST finals.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#work">
@@ -259,29 +315,29 @@
           <h2 id="recognition-h">Recognition &amp; research</h2>
         </div>
         <div class="patent-showcase" data-reveal
-             data-status-wide="Wide-beam 2.4 GHz antenna provides short-range coverage across the area; the patch antenna rests at θ 90°."
-             data-status-directional="The servo turns the 5 GHz patch antenna for a focused, longer-range link in one direction."
+             data-status-wide="The wide-beam 2.4 GHz antenna provides broad short-range coverage; the patch antenna remains at θ = 90°."
+             data-status-directional="The servo steers the 5 GHz patch antenna to create a focused, longer-range link."
              data-status-ai-1="Analyzing device feedback and connection demand…"
              data-status-ai-2="Retargeting the servo-driven patch antenna…"
              data-status-ai-3="Focused link established toward the device. Drag the device to steer the antenna." data-status-ai-drag="Tracking the device in real time as it moves..." data-status-ai-drag-end="Antenna locked on the new device position. Drag again to retarget.">
           <div class="patent-info">
             <p class="mono patent-meta">Registered patent / Co-inventor / 2026 / Application no. <span class="nw">2024/018955</span></p>
             <h3 lang="tr">Yapay Zekâ Kontrollü Dinamik Antenli Modem ile Sinyal ve Kapsama Optimizasyonu Sistemi ve Yöntemi</h3>
-            <p class="patent-desc">System and method for signal and coverage optimization with an AI-controlled dynamic-antenna modem: antenna steering, signal intensity and wireless coverage are continuously optimized from environmental conditions and device demand.</p>
+            <p class="patent-desc">An AI-controlled dynamic-antenna modem that continuously optimizes antenna direction, signal strength, and wireless coverage based on environmental conditions and device demand.</p>
             <ul class="patent-facts mono">
               <li>Dual antenna system: 2.4 GHz wide-beam + 5 GHz patch</li>
-              <li>Servo-controlled direction: 0-180°</li>
+              <li>Servo-controlled steering: 0-180°</li>
               <li>AI-based optimization: predictive model + clustering</li>
               <li>Feedback-driven adjustment, energy-aware operation</li>
             </ul>
             <details class="patent-details">
               <summary>Technical details</summary>
               <div class="patent-details-body">
-                <p><strong>Purpose.</strong> Keep signal strength and coverage efficient as environments and device demand change, instead of fixed, equally-radiated antennas.</p>
+                <p><strong>Purpose.</strong> Manage signal strength and coverage dynamically as environmental conditions and device demand change, rather than relying on fixed antennas that radiate equally in every direction.</p>
                 <p><strong>Dual-antenna approach.</strong> A 2.4 GHz wide-beam antenna covers short ranges broadly; a 5 GHz patch antenna concentrates the signal for longer, focused links.</p>
                 <p><strong>Servo control.</strong> The narrow-beam patch antenna is steered mechanically by a servo motor through 0-180°.</p>
                 <p><strong>AI and feedback.</strong> An AI processor analyzes device feedback (signal level, stability, throughput) and usage patterns, then re-steers antennas and adjusts signal intensity.</p>
-                <p><strong>Energy focus.</strong> Signal power scales with actual usage, aiming for lower consumption at idle.</p>
+                <p><strong>Energy efficiency.</strong> Signal power scales with actual usage, aiming for lower consumption at idle.</p>
               </div>
             </details>
           </div>
@@ -411,7 +467,7 @@
               <button type="button" class="patent-btn" data-patent-mode="directional" aria-pressed="false">Directional signal</button>
               <button type="button" class="patent-btn" data-patent-mode="ai" aria-pressed="false">AI optimization</button>
             </div>
-            <p class="mono patent-status" data-patent-status aria-live="polite">Wide-beam 2.4 GHz antenna provides short-range coverage across the area; the patch antenna rests at θ 90°.</p>
+            <p class="mono patent-status" data-patent-status aria-live="polite">The wide-beam 2.4 GHz antenna provides broad short-range coverage; the patch antenna remains at θ = 90°.</p>
           </div>
         </div>
 
@@ -446,8 +502,8 @@
           <div class="section-head">
             <h2 id="about-h">About</h2>
           </div>
-          <p data-reveal>I am a backend software engineer and computer engineering graduate based in Ordu, Türkiye. I work across Java and Spring Boot services, full-stack platforms, and applied AI, from CRM microservices at Turkcell to computer-vision systems on Jetson hardware.</p>
-          <p data-reveal style="--ri: 1;">I focus on turning working prototypes into dependable systems through robust state handling, sound data models, careful edge-case handling, and performance tuning on constrained hardware. I have applied that approach to a live public platform, nationally ranked TEKNOFEST projects, and a registered patent for AI-controlled antenna optimization.</p>
+          <p data-reveal>I am a backend software engineer and computer engineering graduate based in Ordu, Türkiye. My work spans Java and Spring Boot services, full-stack platforms, and applied AI—from CRM microservices at Turkcell to computer-vision systems on Jetson hardware.</p>
+          <p data-reveal style="--ri: 1;">I focus on turning working prototypes into dependable systems through robust state handling, sound data models, careful edge-case handling, and performance tuning on constrained hardware. That approach has shaped my work on a live public platform, nationally ranked TEKNOFEST projects, and a registered patent for AI-controlled antenna optimization.</p>
           <p data-reveal style="--ri: 2;">I also work with AI2X on autonomous systems and applied-AI projects.</p>
         </div>
         <aside class="about-facts" aria-label="Key facts">
@@ -467,7 +523,7 @@
             <div class="fact">
               <dt class="mono">Team</dt>
               <dd>
-                <a class="tlink" href="https://ai2xsoftware.com/" target="_blank" rel="noopener">AI2X, autonomous systems and AI</a>
+                <a class="tlink" href="https://ai2xsoftware.com/" target="_blank" rel="noopener">AI2X Software</a>
               </dd>
             </div>
           </dl>
@@ -477,30 +533,30 @@
   </main>
 
   <div class="band">
+    <svg class="band-ghost" viewBox="0 0 192 192" aria-hidden="true"><g fill="none" stroke-width="14" stroke-linecap="square" stroke-linejoin="miter"><path d="M58 70 L86 96 L58 122"/><path d="M104 122H140"/></g></svg>
     <section class="contact" id="contact" aria-labelledby="contact-h">
-      <div class="container contact-grid">
-        <div class="contact-lead">
-          <h2 id="contact-h">Get in touch</h2>
-          <p>Email is the best way to reach me about roles, collaborations, or my work.</p>
+      <div class="container">
+        <div class="contact-title" data-reveal>
+          <svg class="contact-badge" viewBox="0 0 192 192" aria-hidden="true"><rect width="192" height="192" rx="43" fill="#142236"/><g fill="none" stroke="#FFFFFF" stroke-linecap="square" stroke-linejoin="miter"><path d="M58 70 L86 96 L58 122" stroke-width="12"/><path d="M104 122H140" stroke-width="12" class="mark-cursor"/><path d="M45 47H77 M45 47V59 M147 47H116 M147 47V59 M45 145H77 M45 145V133 M147 145H116 M147 145V133" stroke-width="6"/></g></svg>
+          <span class="mono">Contact</span>
+          <span class="contact-rule" aria-hidden="true"></span>
         </div>
-        <div class="contact-actions" data-reveal>
-          <a class="contact-mail" href="mailto:cakirerayburak@gmail.com">cakirerayburak@gmail.com</a>
-          <ul class="contact-links">
-            <li>
-              <a class="xlink" href="https://www.linkedin.com/in/eray-burak-cakir/" target="_blank" rel="noopener">
-                <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></svg>
-                LinkedIn
-                <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
-              </a>
-            </li>
-            <li>
-              <a class="xlink" href="https://github.com/cakirerayburak" target="_blank" rel="noopener">
-                <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></svg>
-                GitHub
-                <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
-              </a>
-            </li>
-          </ul>
+        <div class="contact-grid">
+          <div class="contact-lead">
+            <h2 id="contact-h">Have a role or project in mind?</h2>
+            <p>Email me about roles, collaborations, or project ideas.</p>
+            <a class="contact-mail" href="mailto:cakirerayburak@gmail.com">cakirerayburak@gmail.com</a>
+          </div>
+          <dl class="contact-sheet" data-reveal>
+            <div class="sheet-row">
+              <dt class="mono">LinkedIn</dt>
+              <dd><a class="xlink" href="https://www.linkedin.com/in/eray-burak-cakir/" target="_blank" rel="noopener me">in/eray-burak-cakir <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a></dd>
+            </div>
+            <div class="sheet-row">
+              <dt class="mono">GitHub</dt>
+              <dd><a class="xlink" href="https://github.com/cakirerayburak" target="_blank" rel="noopener me">cakirerayburak <svg class="icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a></dd>
+            </div>
+          </dl>
         </div>
       </div>
     </section>
